@@ -156,8 +156,10 @@ export default function Home() {
 
           {/* Hero Visual (Abstract Glass Shape instead of generic mock) */}
           <div className="relative hidden lg:block animate-in fade-in slide-in-from-right-8 duration-1000">
+            
             <div className="absolute inset-0 bg-linear-to-tr from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
             <div className="relative aspect-square rounded-full border border-white/20 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl shadow-2xl flex items-center justify-center overflow-hidden">
+            <img  src="././../../public/assets/Hero.png" alt="Hero.png" className="relative z-10" />
             </div>
           </div>
         </div>
