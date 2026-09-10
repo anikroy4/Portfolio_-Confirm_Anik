@@ -2,7 +2,29 @@ import { useEffect, useState } from 'react';
 
 const titles = ['Front-End Developer', 'React Enthusiast', 'MERN Stack Learner', 'UI/UX Designer'];
 
-const githubUsername = 'anikroy4';
+const fallbackProjects = [
+  {
+    title: 'Todo FullStack Project',
+    description: 'Full-stack Todo application with authentication and persistent storage.',
+    tech: ['JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
+    liveLink: 'https://github.com/anikroy4/Todo_FullStack_Project',
+    sourceLink: 'https://github.com/anikroy4/Todo_FullStack_Project'
+  },
+  {
+    title: 'Social Media Clone',
+    description: 'Social media clone demonstrating posts, likes, and user flows.',
+    tech: ['JavaScript', 'React', 'Node.js', 'MongoDB'],
+    liveLink: 'https://github.com/anikroy4/Social_Media_Clone',
+    sourceLink: 'https://github.com/anikroy4/Social_Media_Clone'
+  },
+  {
+    title: 'Simple Calculator',
+    description: 'Lightweight calculator built with HTML, CSS, and JavaScript.',
+    tech: ['JavaScript', 'HTML', 'CSS'],
+    liveLink: 'https://github.com/anikroy4/Simple-Calculator',
+    sourceLink: 'https://github.com/anikroy4/Simple-Calculator'
+  }
+];
 
 function normalizeGithubProject(repository) {
   const technologies = [repository.language, ...(repository.topics || [])]
@@ -22,7 +44,7 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const [display, setDisplay] = useState('');
   const [typing, setTyping] = useState(true);
-  const [selectedProjects, setSelectedProjects] = useState([]);
+  const [selectedProjects, setSelectedProjects] = useState(fallbackProjects);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -30,7 +52,7 @@ export default function Home() {
     async function loadSelectedProjects() {
       try {
         const response = await fetch(
-          `https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=100`,
+          '/api/github-projects',
           { signal: controller.signal }
         );
 
@@ -38,18 +60,15 @@ export default function Home() {
           throw new Error(`GitHub request failed with ${response.status}`);
         }
 
-        const repositories = await response.json();
-        const importedProjects = repositories
-          .filter(repository => !repository.fork && repository.stargazers_count > 0)
-          .slice(0, 12)
-          .map(normalizeGithubProject);
+        const { projects } = await response.json();
+        const importedProjects = projects.map(normalizeGithubProject);
 
         if (importedProjects.length > 0) {
           setSelectedProjects(importedProjects);
         }
       } catch (error) {
         if (error.name !== 'AbortError') {
-          setSelectedProjects([]);
+          setSelectedProjects(fallbackProjects);
         }
       }
     }
