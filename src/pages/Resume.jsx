@@ -169,8 +169,8 @@ export default function Resume() {
             
             {/* Profile Card */}
             <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-8 shadow-lg shadow-slate-200/20 dark:shadow-black/40">
-              <div className="h-24 w-24 rounded-full bg-linear-to-tr from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-700 border-4 border-white dark:border-slate-800 shadow-sm flex items-center justify-center mb-6">
-                 <span className="text-2xl font-bold text-slate-400 dark:text-slate-500">AR</span>
+              <div className="h-24 w-24 rounded-full bg-linear-to-tr from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-700 border-4 border-white dark:border-slate-800 shadow-sm flex items-center justify-center mb-6 overflow-hidden">
+                <img src="/profile.jpg" alt="Anik Roy" className="w-full h-full object-cover object-top" />
               </div>
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{resumeData.name}</h2>
               <p className="mt-1 font-medium text-blue-600 dark:text-blue-400">{resumeData.title}</p>
