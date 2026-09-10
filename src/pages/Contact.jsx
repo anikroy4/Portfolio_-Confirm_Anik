@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -13,15 +13,10 @@ export default function Contact() {
     e.preventDefault();
     const subject = encodeURIComponent(`New message from ${name} via Portfolio`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    
-    // Trigger the default email client
+
     window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
-    
-    // Show a quick visual success state on the button
     setIsSent(true);
     setTimeout(() => setIsSent(false), 3000);
-    
-    // Optional: clear the form
     setName('');
     setEmail('');
     setMessage('');

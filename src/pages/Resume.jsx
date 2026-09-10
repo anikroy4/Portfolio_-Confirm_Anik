@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 // Organized data from your CV
 const resumeData = {
@@ -12,6 +12,11 @@ const resumeData = {
   summary: "Highly motivated front-end developer with a strong passion for crafting seamless user experiences. Proficient in HTML5, CSS3, Tailwind CSS, Bootstrap, and JavaScript, I excel in building responsive, accessible web designs and leveraging modern frameworks like React.js. Currently transitioning to full MERN stack development to build robust, full-fledged web applications.",
   experience: [
     {
+      role: 'Web Developer (Intern)',
+      company: 'Creative IT Institute (NSDA level 3 certified)',
+      period: '2026',
+      details: 'Trained in front-end and back-end web development, focusing on building responsive and dynamic web applications using modern technologies.'
+    },{
       role: 'MERN Stack Developer (Training)',
       company: 'One Year Academy',
       period: '2024 - 2025 (Running)',
@@ -34,15 +39,90 @@ const resumeData = {
       degree: 'Higher Secondary Certificate (Science)',
       institution: 'Dhaka City College',
       period: '2016'
+    },
+    {
+      degree: 'Secondary School Certificate (Science)',
+      institution: 'Motijheel Govt. Boys\' High School, Dhaka',
+      period: '2014'
     }
   ],
   skills: {
     frontend: ['React JS', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'jQuery'],
-    tools: ['VS Code', 'Git', 'GitHub', 'Netlify', 'Figma', 'Photoshop']
+    tools: ['VS Code', 'Git', 'GitHub', 'Netlify', 'Figma', 'Photoshop', 'Postman', 'Chrome DevTools', 'npm', 'yarn', 'Vercel', 'Firebase', 'SASS', 'Tailwind CSS', 'Supabase', 'MongoDB Atlas'],
+    database: ['MongoDB', 'MySQL', 'PostgreSQL', 'Firebase', 'Supabase','PostgreSQL'],
+    backend: ['Node.js', 'Express.js', 'RESTful APIs', 'GraphQL', 'Firebase Functions'] 
   }
 };
 
+const githubUsername = 'anikroy4';
+const skillAliases = {
+  js: 'JavaScript',
+  javascript: 'JavaScript',
+  ts: 'TypeScript',
+  typescript: 'TypeScript',
+  html: 'HTML',
+  html5: 'HTML5',
+  css: 'CSS',
+  css3: 'CSS3',
+  tailwind: 'Tailwind CSS',
+  tailwindcss: 'Tailwind CSS',
+  react: 'React',
+  'react.js': 'React',
+  node: 'Node.js',
+  nodejs: 'Node.js',
+  'node.js': 'Node.js',
+  express: 'Express.js',
+  mongodb: 'MongoDB',
+  mongoose: 'Mongoose',
+  python: 'Python',
+  py: 'Python',
+  bootstrap: 'Bootstrap',
+  firebase: 'Firebase'
+};
+
+function normalizeSkill(skill) {
+  return skillAliases[skill.toLowerCase()] || skill;
+}
+
 export default function Resume() {
+  const [githubSkills, setGithubSkills] = useState(resumeData.skills.frontend);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function loadGithubSkills() {
+      try {
+        const response = await fetch(
+          `https://api.github.com/users/${githubUsername}/repos?per_page=100`,
+          { signal: controller.signal }
+        );
+
+        if (!response.ok) {
+          throw new Error(`GitHub request failed with ${response.status}`);
+        }
+
+        const repositories = await response.json();
+        const skillsFromGithub = repositories
+          .filter(repository => !repository.fork)
+          .flatMap(repository => [repository.language, ...(repository.topics || [])])
+          .filter(Boolean)
+          .map(normalizeSkill);
+
+        setGithubSkills([...new Set([
+          ...resumeData.skills.frontend,
+          ...skillsFromGithub
+        ])]);
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          setGithubSkills(resumeData.skills.frontend);
+        }
+      }
+    }
+
+    loadGithubSkills();
+
+    return () => controller.abort();
+  }, []);
   
   // Triggers the browser's native print dialog, which users can use to "Save as PDF"
   const handlePrint = () => {
@@ -57,7 +137,7 @@ export default function Resume() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 print:hidden">
           <div>
             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-              Interactive <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Resume</span>
+              Interactive <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">Resume</span>
             </h1>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
               A comprehensive overview of my skills, training, and experience.
@@ -89,7 +169,7 @@ export default function Resume() {
             
             {/* Profile Card */}
             <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-8 shadow-lg shadow-slate-200/20 dark:shadow-black/40">
-              <div className="h-24 w-24 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-700 border-4 border-white dark:border-slate-800 shadow-sm flex items-center justify-center mb-6">
+              <div className="h-24 w-24 rounded-full bg-linear-to-tr from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-700 border-4 border-white dark:border-slate-800 shadow-sm flex items-center justify-center mb-6">
                  <span className="text-2xl font-bold text-slate-400 dark:text-slate-500">AR</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{resumeData.name}</h2>
@@ -115,7 +195,7 @@ export default function Resume() {
             <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-8 shadow-lg shadow-slate-200/20 dark:shadow-black/40 print:break-inside-avoid">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Technical Skills</h3>
               <div className="flex flex-wrap gap-2 mb-6">
-                {resumeData.skills.frontend.map(skill => (
+                {githubSkills.map(skill => (
                   <span key={skill} className="px-3 py-1.5 text-xs font-medium rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/30">
                     {skill}
                   </span>
@@ -155,7 +235,7 @@ export default function Resume() {
               <div className="space-y-8">
                 {resumeData.experience.map((exp, idx) => (
                   <div key={idx} className="relative pl-6 border-l-2 border-slate-200 dark:border-slate-800 print:break-inside-avoid">
-                    <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-slate-900"></div>
+                    <div className="absolute -left-2.25 top-1.5 h-4 w-4 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-slate-900"></div>
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-2">
                       <div>
                         <h3 className="text-lg font-bold text-slate-900 dark:text-white">{exp.role}</h3>

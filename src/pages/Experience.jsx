@@ -1,14 +1,22 @@
-import React from 'react';
 import Banner from '../components/Banner';
 
 const experiences = [
+  
+  {
+    role: 'Web Developer (Intern)',
+    company: 'Creative IT Institute (NSDA level 3 certified)',
+    period: '2026',
+    status: 'Completed',
+    details: 'trained in front-end and back-end web development, focusing on building responsive and dynamic web applications using modern technologies.',
+    skills: ['JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap','Figma', 'Git', 'GitHub', 'RESTful APIs', 'JSON', 'AJAX', 'Web Security Basics']
+  },
   {
     role: 'MERN Stack Developer (Training)',
     company: 'One Year Academy',
     period: '2024 - 2025',
     status: 'In Progress',
     details: 'Mastering React.js for front-end, Node.js and Express.js for back-end APIs, and MongoDB for database management. Focused on building full-fledged MERN applications with user authentication, deployment, and optimization.',
-    skills: ['React.js', 'Node.js', 'Express.js', 'MongoDB']
+    skills: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap','Figma']
   },
   {
     role: 'Front-End Developer (Training)',
@@ -16,7 +24,7 @@ const experiences = [
     period: '2023 - 2024',
     status: 'Completed',
     details: 'Gained proficiency in foundational and modern front-end technologies. Excelled in building responsive, accessible web designs and creating dynamic user interfaces.',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'Bootstrap']
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'Bootstrap', 'React.js', 'Figma', 'Git', 'GitHub', 'Responsive Design', 'Cross-Browser Compatibility', 'Web Accessibility (WCAG)', 'UI/UX Principles', 'Version Control', 'Debugging and Testing']
   }
 ];
 
@@ -41,35 +49,38 @@ export default function Experience() {
           <div className="absolute top-0 bottom-0 left-4 md:left-8 w-1 -ml-[2px] bg-gradient-to-b from-blue-500 via-indigo-500 to-transparent rounded-full opacity-50 dark:opacity-70"></div>
           
           {experiences.map((e, index) => {
-            const delay = `delay-[${index * 150}ms]`;
             const isActive = e.status === 'In Progress';
             
             return (
-              <div key={e.role} className={`relative pl-12 md:pl-24 animate-in fade-in slide-in-from-bottom-8 ${delay}`}>
+              <div
+                key={e.role}
+                className="relative pl-12 md:pl-24 animate-in fade-in slide-in-from-bottom-8"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
                 
                 {/* Luminous Timeline Node - Mathematically Centered */}
                 {/* Mobile orb: 32px (w-8), centered via -ml-[16px]. Desktop orb: 40px (w-10), centered via -ml-[20px] */}
                 {/* top-8 visually aligns the center of the dot with the middle of the h3 text */}
-                <div className="absolute left-[16px] md:left-8 top-8 md:top-10 flex items-center justify-center -ml-[16px] md:-ml-[20px]">
+                <div className="group/node absolute left-4 md:left-8 top-8 md:top-10 flex h-8 w-8 md:h-10 md:w-10 -translate-x-1/2 items-center justify-center">
                   {/* Outer glow ring */}
-                  <div className={`absolute w-8 h-8 md:w-10 md:h-10 rounded-full ${isActive ? 'bg-blue-400/30 animate-ping duration-1000' : 'bg-slate-300/30 dark:bg-slate-700/30'}`}></div>
+                  <div className={`pointer-events-none absolute inset-0 rounded-full transition-transform duration-200 ease-out group-hover/node:scale-110 ${isActive ? 'bg-blue-400/30 animate-ping duration-1000' : 'bg-slate-300/30 dark:bg-slate-700/30'}`}></div>
                   {/* Inner solid dot */}
-                  <div className={`relative w-4 h-4 md:w-5 md:h-5 rounded-full border-[3px] border-slate-50 dark:border-slate-950 z-10 ${isActive ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]' : 'bg-indigo-400 dark:bg-indigo-500'}`}></div>
+                  <div className={`relative z-10 h-4 w-4 rounded-full border-[3px] border-slate-50 transition-transform duration-200 ease-out group-hover/node:scale-125 dark:border-slate-950 md:h-5 md:w-5 ${isActive ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]' : 'bg-indigo-400 dark:bg-indigo-500'}`}></div>
                 </div>
                 
                 {/* Floating Glass Panel */}
                 <div className="relative group">
                   
                   {/* Ambient Hover Glow behind the card */}
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-[2rem] blur-lg opacity-0 group-hover:opacity-15 transition duration-500"></div>
+                  <div className="pointer-events-none absolute -inset-0.5 rounded-[2rem] bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 blur-lg transition-opacity duration-500 ease-out group-hover:opacity-15"></div>
                   
                   {/* Pixel-perfect glassmorphism: updated backdrop-blur-2xl and exact border contrast */}
-                  <div className="relative rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200/50 dark:hover:border-blue-700/50">
+                  <div className="relative rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:border-blue-700/50 dark:hover:shadow-blue-950/40">
                     
                     {/* Header Section */}
                     <div className="flex flex-col xl:flex-row xl:items-start justify-between gap-5 mb-6">
                       <div className="flex-1">
-                        <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300 leading-tight">
+                        <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white transition-colors duration-300 ease-out group-hover:text-blue-600 dark:group-hover:text-blue-400 leading-tight">
                           {e.role}
                         </h3>
                         <div className="flex flex-wrap items-center gap-2 mt-2">

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import RootLayout from './root/RootLayout'
 import Home from './pages/Home'
