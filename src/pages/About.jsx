@@ -136,12 +136,12 @@ export default function About() {
                     <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka City College • 2016 • GPA: 4.67/5.00</p>
                   </div>
                 </div>
-
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
                     <div className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+                    <div className="w-px h-full bg-slate-200 dark:bg-slate-700 my-1"></div>
                   </div>
-                  <div>
+                  <div className="pb-2">
                     <h4 className="text-base font-bold text-slate-900 dark:text-white">Secondary School Certificate (Science)</h4>
                     <p className="text-sm text-slate-500 dark:text-slate-400">Motijheel Govt. Boys&apos; High School • 2014 • GPA: 5.00/5.00</p>
                   </div>
