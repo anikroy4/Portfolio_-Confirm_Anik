@@ -22,7 +22,9 @@ export default function About() {
           <div className="md:col-span-4 flex flex-col gap-6">
             <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-8 text-center shadow-lg shadow-slate-200/20 dark:shadow-black/40 transition-all hover:shadow-xl">
               <div className="h-32 w-32 mx-auto rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-700 border-4 border-white dark:border-slate-800 shadow-sm flex items-center justify-center">
-                 <span className="text-3xl font-bold text-slate-400 dark:text-slate-500">AR</span>
+                 <span className="text-3xl font-bold text-slate-400 dark:text-slate-500">
+                  <img src="/profile.jpg" alt="Anik Roy" className="h-full w-full object-cover rounded-full" />
+                 </span>
               </div>
               <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-white">Anik Roy</h2>
               <p className="mt-1 text-sm font-medium text-blue-600 dark:text-blue-400">Front End Developer</p>
