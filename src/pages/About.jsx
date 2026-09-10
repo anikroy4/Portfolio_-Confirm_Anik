@@ -56,6 +56,17 @@ export default function About() {
                 </div>
               </div>
             </div>
+            {/* Experience Card */}
+            <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-6 shadow-lg shadow-slate-200/20 dark:shadow-black/40">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Experience</h3>
+              <div className="space-y-4">
+                <div className="relative pl-4 border-l-2 border-blue-500">
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">Web Developer (Intern)</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Creative IT Institute (NSDA level-3 Certified)</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Worked on various web development projects, gaining hands-on experience in HTML, CSS,Bootstrap, Tailwind CSS, and JavaScript.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Main Content */}
