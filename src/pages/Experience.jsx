@@ -1,13 +1,12 @@
-import Banner from '../components/Banner';
-
 const experiences = [
-   {
+  {
     role: 'MERN Stack Developer (Lead & Founder)',
     company: 'Craftbit Tech BD',
     period: '15 September 2026 - Present',
     status: 'In Progress',
     details: "Leading a team of developers to build full-stack web applications using the MERN stack. Responsible for project management, code reviews, and ensuring best practices in development and deployment.",
     skills: ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap","Figma", "Git", "GitHub", "RESTful APIs", "JSON", "AJAX", "Web Security Basics"]
+
   },
   {
     role: 'Web Developer (Intern)',
@@ -20,8 +19,8 @@ const experiences = [
   {
     role: 'MERN Stack Developer (Training)',
     company: 'One Year Academy',
-    period: '2024 - 2025',
-    status: 'In Progress',
+    period: '2024 - 2026',
+    status: 'Completed',
     details: 'Mastering React.js for front-end, Node.js and Express.js for back-end APIs, and MongoDB for database management. Focused on building full-fledged MERN applications with user authentication, deployment, and optimization.',
     skills: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap','Figma']
   },
@@ -37,16 +36,18 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-12 pb-24">
-      
-      <Banner 
-        title="Experience & Training" 
-        subtitle="My technical journey and professional development." 
-        eyebrow="Career" 
-      />
-      
-      <main className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="sr-only">Work Experience and Training</h1>
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+
+        {/* Header Section */}
+        <div className="mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 text-center md:text-left">
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+            Experience <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">&amp; Training</span>
+          </h1>
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto md:mx-0">
+            My technical journey and professional development.
+          </p>
+        </div>
 
         {/* The Glowing Pathway Container */}
         <div className="relative mt-8 space-y-12 md:space-y-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
@@ -56,7 +57,7 @@ export default function Experience() {
           <div className="absolute top-0 bottom-0 left-4 md:left-8 w-1 -ml-[2px] bg-gradient-to-b from-blue-500 via-indigo-500 to-transparent rounded-full opacity-50 dark:opacity-70"></div>
           
           {experiences.map((e, index) => {
-            const isActive = e.status === 'In Progress';
+            const isActive = e.status === 'Running' || e.status === 'Present';
             
             return (
               <div
@@ -147,7 +148,7 @@ export default function Experience() {
           })}
           
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

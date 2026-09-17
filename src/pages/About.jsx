@@ -2,16 +2,16 @@ import React from 'react';
 
 export default function About() {
   return (
-    <main className="min-h-screen px-4 py-12 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950 transition-colors">
+    <main className="min-h-screen px-4 pt-24 pb-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950 transition-colors">
       <div className="mx-auto max-w-6xl">
         
         {/* Header Section */}
-        <div className="mb-10 mt-10">
+        <div className="mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 text-center md:text-left">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Me</span>
           </h1>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-            Front-End Developer passionate about user experiences and modern web technologies.
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto md:mx-0">
+            MERN Stack Developer passionate about user experiences and modern web technologies.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ export default function About() {
                  </span>
               </div>
               <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-white">Anik Roy</h2>
-              <p className="mt-1 text-sm font-medium text-blue-600 dark:text-blue-400">Front End Developer</p>
+              <p className="mt-1 text-sm font-medium text-blue-600 dark:text-blue-400">MERN Stack Developer</p>
               
               <div className="mt-6 space-y-3 text-sm text-slate-600 dark:text-slate-400 text-left bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl">
                 <p className="flex items-center gap-3">
@@ -60,6 +60,13 @@ export default function About() {
             <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-6 shadow-lg shadow-slate-200/20 dark:shadow-black/40">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Experience</h3>
               <div className="space-y-4">
+                <div className="relative pl-4 border-l-2 border-blue-500 mb-3.5">
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">MERN Stack Developer (Lead & Founder)</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">CraftBit Tech BD (15 September 2026-Present)</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Leading a team of developers to build scalable MERN stack applications. Responsible for project management, architecture design, and overseeing the development lifecycle from conception to deployment.</p>
+                </div>
+              </div>
+              <div className="space-y-4">
                 <div className="relative pl-4 border-l-2 border-blue-500">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">Web Developer (Intern)</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400">Creative IT Institute (NSDA level-3 Certified)</p>
@@ -76,8 +83,8 @@ export default function About() {
             <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-8 shadow-lg shadow-slate-200/20 dark:shadow-black/40">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Journey & Objective</h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                I am a highly motivated front-end developer with a strong passion for crafting seamless user experiences. 
-                Proficient in HTML5, CSS3, Tailwind CSS, Bootstrap, and JavaScript, I excel in building responsive, 
+                I am a highly motivated MERN stack developer with a strong passion for crafting seamless user experiences. 
+                Proficient in HTML5, CSS3, Tailwind CSS, Bootstrap, MongoDB, Node.js, Express.js, and JavaScript, I excel in building responsive, 
                 accessible web designs and leveraging modern frameworks like React.js. 
               </p>
               <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">

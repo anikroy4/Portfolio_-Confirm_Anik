@@ -33,10 +33,10 @@ const educationData = [
 export default function Education() {
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         
         {/* Header Section */}
-        <div className="mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700 text-center md:text-left">
+        <div className="mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 text-center md:text-left">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
             Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Background</span>
           </h1>
