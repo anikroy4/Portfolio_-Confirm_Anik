@@ -1,11 +1,12 @@
 const experiences = [
   {
     role: 'MERN Stack Developer (Lead & Founder)',
-    company: 'CraftBit Tech BD',
-    period: '15 September 2026-Present',
-    status: 'Present',
-    details: 'Leading a team of developers to build scalable MERN stack applications. Responsible for project management, architecture design, and overseeing the development lifecycle from conception to deployment.',
-    skills: ['JavaScript','Node.js', 'Express.js', 'React', 'Node.js', 'Express.js', 'MongoDB', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap','Figma', 'Git', 'GitHub', 'RESTful APIs', 'JSON', 'AJAX', 'Web Security Basics']
+    company: 'Craftbit Tech BD',
+    period: '15 September 2026 - Present',
+    status: 'In Progress',
+    details: "Leading a team of developers to build full-stack web applications using the MERN stack. Responsible for project management, code reviews, and ensuring best practices in development and deployment.",
+    skills: ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap","Figma", "Git", "GitHub", "RESTful APIs", "JSON", "AJAX", "Web Security Basics"]
+
   },
   {
     role: 'Web Developer (Intern)',
