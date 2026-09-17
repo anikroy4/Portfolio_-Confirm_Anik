@@ -1,22 +1,33 @@
 import Banner from '../components/Banner';
 
 const experiences = [
+<<<<<<< Updated upstream
   
+=======
+   {
+    role: 'MERN Stack Developer (Lead & Founder)',
+    company: 'Craftbit Tech BD',
+    period: '15 September 2026 - Present',
+    status: 'In Progress',
+    details: "Leading a team of developers to build full-stack web applications using the MERN stack. Responsible for project management, code reviews, and ensuring best practices in development and deployment.",
+    skills: ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap","Figma", "Git", "GitHub", "RESTful APIs", "JSON", "AJAX", "Web Security Basics", "Project Management", "Agile Methodologies", "Team Leadership", "Code Review", "Continuous Integration/Continuous Deployment (CI/CD)", "Docker", "Kubernetes"]
+  },
+>>>>>>> Stashed changes
   {
     role: 'Web Developer (Intern)',
     company: 'Creative IT Institute (NSDA level 3 certified)',
     period: '2026',
     status: 'Completed',
-    details: 'trained in front-end and back-end web development, focusing on building responsive and dynamic web applications using modern technologies.',
+    details: 'Trained in front-end and back-end web development, focusing on building responsive and dynamic web applications using modern technologies.',
     skills: ['JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap','Figma', 'Git', 'GitHub', 'RESTful APIs', 'JSON', 'AJAX', 'Web Security Basics']
   },
   {
     role: 'MERN Stack Developer (Training)',
     company: 'One Year Academy',
-    period: '2024 - 2025',
-    status: 'In Progress',
+    period: '2024 - 2026',
+    status: 'Completed',
     details: 'Mastering React.js for front-end, Node.js and Express.js for back-end APIs, and MongoDB for database management. Focused on building full-fledged MERN applications with user authentication, deployment, and optimization.',
-    skills: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap','Figma']
+    skills: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap','Figma', 'Git', 'GitHub', 'RESTful APIs', 'JSON', 'AJAX', 'Web Security Basics', 'Project Management', 'Agile Methodologies', 'Team Collaboration', 'Code Review', 'Continuous Integration/Continuous Deployment (CI/CD)', 'Docker', 'Kubernetes', 'Responsive Design', 'Cross-Browser Compatibility', 'Web Accessibility (WCAG)', 'UI/UX Principles', 'Version Control', 'Debugging and Testing',"SCSS", "TypeScript", "Next.js", "Redux","Redux Toolkit", "WebSockets", "Serverless Architecture", "Performance Optimization", "SEO Best Practices"]
   },
   {
     role: 'Front-End Developer (Training)',

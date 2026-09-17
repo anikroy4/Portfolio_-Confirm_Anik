@@ -18,6 +18,12 @@ const projects = [
     tech: ['React', 'Node.js', 'Express', 'MongoDB'],
     live: '#',
     code: 'https://github.com/anikroy4/Social_Media_Clone',
+<<<<<<< Updated upstream
+=======
+    expertise: 'fullstack',
+    highlights: ['Post System', 'Like/Comment', 'User Auth','authentication and authorization', 'User Management'],
+    stars: 2,
+>>>>>>> Stashed changes
     languages: ['JavaScript'],
     frameworks: ['React', 'Express'],
     libraries: ['Mongoose'],

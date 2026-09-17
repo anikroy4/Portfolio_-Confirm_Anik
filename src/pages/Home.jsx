@@ -132,7 +132,7 @@ export default function Home() {
               <a href="#projects" className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold transition-transform hover:scale-105 shadow-lg shadow-slate-900/20 dark:shadow-white/10">
                 View My Work
               </a>
-              <a href="/resume" className="inline-flex items-center justify-center h-12 px-6 rounded-full border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <a href="/resume.pdf" download="Anik_Roy_Resume.pdf" className="inline-flex items-center justify-center h-12 px-6 rounded-full border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                 Download Resume
               </a>
             </div>
@@ -154,8 +154,13 @@ export default function Home() {
             </div>
           </div>
 
+<<<<<<< Updated upstream
           {/* Hero Visual (Abstract Glass Shape instead of generic mock) */}
           <div className="relative hidden lg:block animate-in fade-in slide-in-from-right-8 duration-1000">
+=======
+          {/* Hero Visual */}
+          <div className="relative animate-in fade-in slide-in-from-right-8 duration-1000 mt-12 lg:mt-0">
+>>>>>>> Stashed changes
             <div className="absolute inset-0 bg-linear-to-tr from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
             <div className="relative aspect-square rounded-full border border-white/20 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl shadow-2xl flex items-center justify-center overflow-hidden">
             </div>
