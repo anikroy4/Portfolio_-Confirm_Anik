@@ -1,9 +1,9 @@
 const experiences = [
   {
     role: 'MERN Stack Developer (Lead & Founder)',
-    company: 'Craftbit Tech BD',
+    company: 'CraftBit Tech BD',
     period: '15 September 2026 - Present',
-    status: 'In Progress',
+    status: 'Present',
     details: "Leading a team of developers to build full-stack web applications using the MERN stack. Responsible for project management, code reviews, and ensuring best practices in development and deployment.",
     skills: ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap","Figma", "Git", "GitHub", "RESTful APIs", "JSON", "AJAX", "Web Security Basics"]
 
@@ -42,7 +42,7 @@ export default function Experience() {
         {/* Header Section */}
         <div className="mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 text-center md:text-left">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            Experience <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">&amp; Training</span>
+            Experience <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">&amp; Training</span>
           </h1>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto md:mx-0">
             My technical journey and professional development.
@@ -54,7 +54,7 @@ export default function Experience() {
           
           {/* Pixel-Perfect Gradient Vertical Line */}
           {/* Line width is 4px (w-1). -ml-[2px] centers it perfectly on the left-4/left-8 axis */}
-          <div className="absolute top-0 bottom-0 left-4 md:left-8 w-1 -ml-[2px] bg-gradient-to-b from-blue-500 via-indigo-500 to-transparent rounded-full opacity-50 dark:opacity-70"></div>
+          <div className="absolute top-0 bottom-0 left-4 md:left-8 w-1 -ml-[2px] bg-linear-to-b from-blue-500 via-indigo-500 to-transparent rounded-full opacity-50 dark:opacity-70"></div>
           
           {experiences.map((e, index) => {
             const isActive = e.status === 'Running' || e.status === 'Present';
@@ -80,7 +80,7 @@ export default function Experience() {
                 <div className="relative group">
                   
                   {/* Ambient Hover Glow behind the card */}
-                  <div className="pointer-events-none absolute -inset-0.5 rounded-[2rem] bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 blur-lg transition-opacity duration-500 ease-out group-hover:opacity-15"></div>
+                  <div className="pointer-events-none absolute -inset-0.5 rounded-[2rem] bg-linear-to-r from-blue-500 to-indigo-500 opacity-0 blur-lg transition-opacity duration-500 ease-out group-hover:opacity-15"></div>
                   
                   {/* Pixel-perfect glassmorphism: updated backdrop-blur-2xl and exact border contrast */}
                   <div className="relative rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:border-blue-700/50 dark:hover:shadow-blue-950/40">
