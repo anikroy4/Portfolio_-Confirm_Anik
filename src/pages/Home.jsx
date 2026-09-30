@@ -188,50 +188,37 @@ export default function Home() {
     setContactStatus('submitting');
     setContactStatusMsg('Sending message...');
 
-    const targetEmail = 'anikroy.uiu.ac.bd@gmail.com';
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'e4106535-020e-4d43-8efc-40bf4f2e77e9';
 
     try {
-      if (accessKey) {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({
-            access_key: accessKey,
-            name: contactName,
-            email: contactEmail,
-            message: contactMessage,
-            subject: `[Portfolio Home] Message from ${contactName}`,
-            from_name: 'Anik Roy Portfolio'
-          })
-        });
-        const data = await response.json();
-        if (data.success) {
-          setContactStatus('success');
-          setContactStatusMsg('Message sent directly to inbox! Thank you.');
-          setContactName('');
-          setContactEmail('');
-          setContactMessage('');
-          setTimeout(() => setContactStatus('idle'), 6000);
-          return;
-        } else {
-          throw new Error(data.message || 'Failed');
-        }
-      } else {
-        const subject = encodeURIComponent(`Message from ${contactName} via Portfolio`);
-        const body = encodeURIComponent(`Name: ${contactName}\nEmail: ${contactEmail}\n\nMessage:\n${contactMessage}`);
-        window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: contactName,
+          email: contactEmail,
+          message: contactMessage,
+          subject: `[Portfolio Home] Message from ${contactName}`,
+          from_name: 'Anik Roy Portfolio'
+        })
+      });
+      const data = await response.json();
+      if (data.success) {
         setContactStatus('success');
-        setContactStatusMsg('Opening your email client to send message...');
+        setContactStatusMsg('Thank you! Your message has been sent directly to my inbox.');
         setContactName('');
         setContactEmail('');
         setContactMessage('');
-        setTimeout(() => setContactStatus('idle'), 6000);
+        setTimeout(() => setContactStatus('idle'), 7000);
+      } else {
+        throw new Error(data.message || 'Failed');
       }
     } catch (err) {
       console.warn('Home contact submission error:', err);
       setContactStatus('error');
-      setContactStatusMsg('Could not deliver directly. Please use the WhatsApp or direct email link.');
+      setContactStatusMsg('Something went wrong while sending. Please reach out on WhatsApp or email.');
+      setTimeout(() => setContactStatus('idle'), 6000);
     }
   };
 

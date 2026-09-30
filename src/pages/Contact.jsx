@@ -103,7 +103,7 @@ export default function Contact() {
           <div className="lg:col-span-7 animate-in fade-in slide-in-from-bottom-8 delay-200">
             <div className="rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60">
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Name Input */}
