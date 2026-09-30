@@ -240,7 +240,7 @@ export default function Resume() {
         {/* Top Header Card & Actions */}
         <div className="relative mb-10 overflow-hidden rounded-3xl bg-white/80 dark:bg-slate-900/80 p-6 sm:p-10 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print:hidden animate-in fade-in slide-in-from-bottom-6 duration-700">
           
-          <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-blue-500/10 via-indigo-500/10 to-transparent rounded-full blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/3"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-linear-to-bl from-blue-500/10 via-indigo-500/10 to-transparent rounded-full blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/3"></div>
 
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div>
@@ -253,7 +253,7 @@ export default function Resume() {
               </div>
 
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                Interactive <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">Resume</span>
+                Interactive <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600">Resume</span>
               </h1>
               <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
                 {resumeData.headline}
@@ -287,7 +287,7 @@ export default function Resume() {
               <a 
                 href="/Anik_Roy_CV.pdf" 
                 download="Anik_Roy_CV.pdf"
-                className="inline-flex items-center gap-2 h-11 px-5 sm:px-6 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/25 text-xs sm:text-sm"
+                className="inline-flex items-center gap-2 h-11 px-5 sm:px-6 rounded-2xl bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/25 text-xs sm:text-sm"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -327,7 +327,7 @@ export default function Resume() {
             <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50">
               
               <div className="flex items-center gap-4 mb-6">
-                <div className="relative h-20 w-20 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 p-0.5 shadow-md overflow-hidden shrink-0">
+                <div className="relative h-20 w-20 rounded-2xl bg-linear-to-tr from-blue-600 to-indigo-600 p-0.5 shadow-md overflow-hidden shrink-0">
                   <img 
                     src="/profile.jpg" 
                     alt="Anik Roy" 
