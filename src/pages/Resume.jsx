@@ -152,8 +152,8 @@ export default function Resume() {
             </button>
             {/* Make sure "Latest_CV.pdf" is in your public folder */}
             <a 
-              href="/Latest_CV.pdf" 
-              download="Anik_Roy_CV.pdf"
+              href="/resume.pdf" 
+              download="resume.pdf"
               className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold transition-transform hover:scale-105 shadow-lg shadow-slate-900/20 dark:shadow-white/10"
             >
               Download Original

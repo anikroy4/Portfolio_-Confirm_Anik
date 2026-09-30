@@ -6,7 +6,7 @@ export default function SiteBanner({ text }) {
   if (!isVisible) return null;
 
   return (
-    <div className="relative z-[60] w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-md animate-in slide-in-from-top duration-500">
+    <div className="relative z-60 w-full bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-md animate-in slide-in-from-top duration-500">
       
       {/* Container */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">

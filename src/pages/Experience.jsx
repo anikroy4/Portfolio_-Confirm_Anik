@@ -54,7 +54,7 @@ export default function Experience() {
           
           {/* Pixel-Perfect Gradient Vertical Line */}
           {/* Line width is 4px (w-1). -ml-[2px] centers it perfectly on the left-4/left-8 axis */}
-          <div className="absolute top-0 bottom-0 left-4 md:left-8 w-1 -ml-[2px] bg-linear-to-b from-blue-500 via-indigo-500 to-transparent rounded-full opacity-50 dark:opacity-70"></div>
+          <div className="absolute top-0 bottom-0 left-4 md:left-8 w-1 -ml-0.5 bg-linear-to-b from-blue-500 via-indigo-500 to-transparent rounded-full opacity-50 dark:opacity-70"></div>
           
           {experiences.map((e, index) => {
             const isActive = e.status === 'Running' || e.status === 'Present';
@@ -80,10 +80,10 @@ export default function Experience() {
                 <div className="relative group">
                   
                   {/* Ambient Hover Glow behind the card */}
-                  <div className="pointer-events-none absolute -inset-0.5 rounded-[2rem] bg-linear-to-r from-blue-500 to-indigo-500 opacity-0 blur-lg transition-opacity duration-500 ease-out group-hover:opacity-15"></div>
+                  <div className="pointer-events-none absolute -inset-0.5 rounded-4xl bg-linear-to-r from-blue-500 to-indigo-500 opacity-0 blur-lg transition-opacity duration-500 ease-out group-hover:opacity-15"></div>
                   
                   {/* Pixel-perfect glassmorphism: updated backdrop-blur-2xl and exact border contrast */}
-                  <div className="relative rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:border-blue-700/50 dark:hover:shadow-blue-950/40">
+                  <div className="relative rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:border-blue-700/50 dark:hover:shadow-blue-950/40">
                     
                     {/* Header Section */}
                     <div className="flex flex-col xl:flex-row xl:items-start justify-between gap-5 mb-6">
