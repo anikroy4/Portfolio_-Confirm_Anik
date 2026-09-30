@@ -177,6 +177,63 @@ export default function Home() {
   const [display, setDisplay] = useState('');
   const [typing, setTyping] = useState(true);
   const [selectedProjects, setSelectedProjects] = useState(fallbackProjects);
+  const [contactName, setContactName] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactMessage, setContactMessage] = useState('');
+  const [contactStatus, setContactStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
+  const [contactStatusMsg, setContactStatusMsg] = useState('');
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setContactStatus('submitting');
+    setContactStatusMsg('Sending message...');
+
+    const targetEmail = 'anikroy.uiu.ac.bd@gmail.com';
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    try {
+      if (accessKey) {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: contactName,
+            email: contactEmail,
+            message: contactMessage,
+            subject: `[Portfolio Home] Message from ${contactName}`,
+            from_name: 'Anik Roy Portfolio'
+          })
+        });
+        const data = await response.json();
+        if (data.success) {
+          setContactStatus('success');
+          setContactStatusMsg('Message sent directly to inbox! Thank you.');
+          setContactName('');
+          setContactEmail('');
+          setContactMessage('');
+          setTimeout(() => setContactStatus('idle'), 6000);
+          return;
+        } else {
+          throw new Error(data.message || 'Failed');
+        }
+      } else {
+        const subject = encodeURIComponent(`Message from ${contactName} via Portfolio`);
+        const body = encodeURIComponent(`Name: ${contactName}\nEmail: ${contactEmail}\n\nMessage:\n${contactMessage}`);
+        window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+        setContactStatus('success');
+        setContactStatusMsg('Opening your email client to send message...');
+        setContactName('');
+        setContactEmail('');
+        setContactMessage('');
+        setTimeout(() => setContactStatus('idle'), 6000);
+      }
+    } catch (err) {
+      console.warn('Home contact submission error:', err);
+      setContactStatus('error');
+      setContactStatusMsg('Could not deliver directly. Please use the WhatsApp or direct email link.');
+    }
+  };
 
   useEffect(() => {
     const controller = new AbortController();
@@ -192,21 +249,24 @@ export default function Home() {
           throw new Error(`GitHub request failed with ${response.status}`);
         }
 
-        const { projects } = await response.json();
-        const importedProjects = projects
-          .map((p, i) => normalizeGithubProject(p, i))
-          .map(p => ({
-            ...p,
-            expertise: determineExpertise(
-              { frameworks: p.frameworks, databases: p.databases, languages: p.languages },
-              p.title || ''
-            )
-          }))
-          .sort((a, b) => (b.stars || 0) - (a.stars || 0))
-          .slice(0, 6);
+        const data = await response.json();
+        const projects = data?.projects;
+        if (Array.isArray(projects) && projects.length > 0) {
+          const importedProjects = projects
+            .map((p, i) => normalizeGithubProject(p, i))
+            .map(p => ({
+              ...p,
+              expertise: determineExpertise(
+                { frameworks: p.frameworks, databases: p.databases, languages: p.languages },
+                p.title || ''
+              )
+            }))
+            .sort((a, b) => (b.stars || 0) - (a.stars || 0))
+            .slice(0, 6);
 
-        if (importedProjects.length > 0) {
-          setSelectedProjects(importedProjects);
+          if (importedProjects.length > 0) {
+            setSelectedProjects(importedProjects);
+          }
         }
       } catch (error) {
         if (error.name !== 'AbortError') {
@@ -249,62 +309,64 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-12">
       
       {/* Hero Section */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-12 pb-16 sm:pb-20">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           
           {/* Hero Text */}
-          <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="flex flex-col gap-6 text-center lg:text-left items-center lg:items-start animate-in fade-in slide-in-from-bottom-8 duration-700 w-full">
             <div>
               <p className="text-sm font-semibold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-3">Hi, I&apos;m</p>
-              <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
                 Anik Roy
                 <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
                   {display}
                   <span className="animate-pulse text-slate-900 dark:text-white">|</span>
                 </span>
               </h1>
             </div>
             
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
               I craft highly polished, seamless user experiences. Currently proficient in React and Tailwind, and expanding my expertise into full-fledged MERN stack development to build robust, scalable applications.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-2">
+            <div className="flex flex-wrap gap-4 mt-2 justify-center lg:justify-start">
               <a href="#projects" className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold transition-transform hover:scale-105 shadow-lg shadow-slate-900/20 dark:shadow-white/10">
                 View My Work
               </a>
               <a href="/resume" className="inline-flex items-center justify-center h-12 px-6 rounded-full border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                Download Resume
+                View Resume
               </a>
             </div>
 
             {/* Quick Stats Grid */}
-            <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
-              <div>
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-slate-200 dark:border-slate-800 w-full max-w-lg">
+              <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-slate-900 dark:text-white">5+</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Live Projects</div>
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Live Projects</div>
               </div>
-              <div>
+              <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-slate-900 dark:text-white">MERN</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Stack Focus</div>
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Stack Focus</div>
               </div>
-              <div>
+              <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-slate-900 dark:text-white">React</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Specialist</div>
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Specialist</div>
               </div>
             </div>
           </div>
 
-          {/* Hero Visual */}
-          <div className="relative hidden lg:block animate-in fade-in slide-in-from-right-8 duration-1000">
-            <div className="absolute inset-0 bg-linear-to-tr from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-            <div className="relative aspect-square rounded-full border border-white/20 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl shadow-2xl flex items-center justify-center overflow-hidden">
-              <img 
-                src="/profile.jpg" 
-                alt="profile.jpg" 
-                className="w-full h-full object-cover object-top" 
-              />
+          {/* Hero Visual - Responsive for Mobile, Tablet, and Desktop */}
+          <div className="flex justify-center items-center w-full animate-in fade-in slide-in-from-bottom-6 lg:slide-in-from-right-8 duration-1000">
+            <div className="relative w-48 sm:w-64 md:w-80 lg:w-full max-w-[340px] lg:max-w-[420px] aspect-square">
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 sm:opacity-25 animate-pulse"></div>
+              <div className="relative w-full h-full rounded-full border-4 border-white/60 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl shadow-2xl flex items-center justify-center overflow-hidden p-1.5 sm:p-2">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Anik Roy" 
+                  className="w-full h-full object-cover object-top rounded-full" 
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -572,25 +634,71 @@ export default function Home() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">📱</div>
                   <span className="font-medium">+88 01521 428525</span>
                 </a>
+                <a 
+                  href="https://wa.me/8801521428525?text=Hello%20Anik%2C%20I%20saw%20your%20portfolio!" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition-all"
+                >
+                  <span>💬</span> Chat on WhatsApp
+                </a>
               </div>
             </div>
 
             <div>
-              <form className="flex flex-col gap-4">
+              <form onSubmit={handleContactSubmit} className="flex flex-col gap-4">
                 <div>
                   <label htmlFor="name" className="sr-only">Name</label>
-                  <input type="text" id="name" className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your name" />
+                  <input 
+                    type="text" 
+                    id="name" 
+                    value={contactName}
+                    onChange={(e) => setContactName(e.target.value)}
+                    required
+                    className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    placeholder="Your name" 
+                  />
                 </div>
                 <div>
                   <label htmlFor="email" className="sr-only">Email</label>
-                  <input type="email" id="email" className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your email address" />
+                  <input 
+                    type="email" 
+                    id="email" 
+                    value={contactEmail}
+                    onChange={(e) => setContactEmail(e.target.value)}
+                    required
+                    className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    placeholder="Your email address" 
+                  />
                 </div>
                 <div>
                   <label htmlFor="message" className="sr-only">Message</label>
-                  <textarea id="message" rows="4" className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="How can I help you?"></textarea>
+                  <textarea 
+                    id="message" 
+                    rows="4" 
+                    value={contactMessage}
+                    onChange={(e) => setContactMessage(e.target.value)}
+                    required
+                    className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" 
+                    placeholder="How can I help you?"
+                  ></textarea>
                 </div>
-                <button type="submit" className="mt-2 inline-flex items-center justify-center rounded-full bg-slate-900 dark:bg-white px-6 py-3 text-sm font-semibold text-white dark:text-slate-900 hover:scale-105 transition-transform">
-                  Send Message
+                {contactStatus === 'success' && (
+                  <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 animate-in fade-in">
+                    ✓ {contactStatusMsg}
+                  </p>
+                )}
+                {contactStatus === 'error' && (
+                  <p className="text-sm font-medium text-amber-600 dark:text-amber-400 animate-in fade-in">
+                    ⚠️ {contactStatusMsg}
+                  </p>
+                )}
+                <button 
+                  type="submit" 
+                  disabled={contactStatus === 'submitting'}
+                  className="mt-2 inline-flex items-center justify-center rounded-full bg-slate-900 dark:bg-white px-6 py-3 text-sm font-semibold text-white dark:text-slate-900 hover:scale-105 transition-transform cursor-pointer disabled:opacity-75"
+                >
+                  {contactStatus === 'submitting' ? 'Sending Message...' : 'Send Message'}
                 </button>
               </form>
             </div>

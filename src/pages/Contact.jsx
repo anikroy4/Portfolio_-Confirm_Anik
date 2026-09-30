@@ -29,7 +29,7 @@ export default function Contact() {
         {/* Page Header */}
         <div className="text-center md:text-left mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Touch</span>
+            Get in <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">Touch</span>
           </h1>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
             Interested in working together? Feel free to reach out for collaborations, freelance work, or just to say hello.
@@ -41,9 +41,9 @@ export default function Contact() {
           {/* Left Column: Contact Information Card */}
           <div className="lg:col-span-5 relative group animate-in fade-in slide-in-from-bottom-8 delay-100">
             {/* Ambient Background Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-br from-blue-500 to-purple-500 rounded-[2.5rem] blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
+            <div className="absolute -inset-1 bg-linear-to-br from-blue-500 to-purple-500 rounded-[2.5rem] blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
             
-            <div className="relative rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 h-full flex flex-col justify-between">
+            <div className="relative rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 h-full flex flex-col justify-between">
               
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Contact Details</h3>
@@ -101,7 +101,7 @@ export default function Contact() {
 
           {/* Right Column: The Form */}
           <div className="lg:col-span-7 animate-in fade-in slide-in-from-bottom-8 delay-200">
-            <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60">
+            <div className="rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60">
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 
@@ -156,7 +156,7 @@ export default function Contact() {
                     className={`inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl ${
                       isSent 
                       ? 'bg-emerald-500 shadow-emerald-500/30' 
-                      : 'bg-gradient-to-r from-blue-600 to-indigo-600 shadow-blue-500/30 hover:from-blue-500 hover:to-indigo-500'
+                      : 'bg-linear-to-r from-blue-600 to-indigo-600 shadow-blue-500/30 hover:from-blue-500 hover:to-indigo-500'
                     }`}
                   >
                     {isSent ? (
