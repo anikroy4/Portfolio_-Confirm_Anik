@@ -177,61 +177,34 @@ export default function Home() {
   const [display, setDisplay] = useState('');
   const [typing, setTyping] = useState(true);
   const [selectedProjects, setSelectedProjects] = useState(fallbackProjects);
-  const [contactName, setContactName] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
-  const [contactMessage, setContactMessage] = useState('');
-  const [contactStatus, setContactStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
-  const [contactStatusMsg, setContactStatusMsg] = useState('');
+  const [contactResult, setContactResult] = useState('');
 
-  const handleContactSubmit = async (e) => {
-    e.preventDefault();
-    setContactStatus('submitting');
-    setContactStatusMsg('Sending message...');
+  const handleContactSubmit = async (event) => {
+    event.preventDefault();
+    setContactResult("Sending....");
 
-    const targetEmail = 'anikroy.uiu.ac.bd@gmail.com';
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const formData = new FormData(event.target);
+    formData.append("access_key", "e4106535-020e-4d43-8efc-40bf4f2e77e9");
 
     try {
-      if (accessKey) {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({
-            access_key: accessKey,
-            name: contactName,
-            email: contactEmail,
-            message: contactMessage,
-            subject: `[Portfolio Home] Message from ${contactName}`,
-            from_name: 'Anik Roy Portfolio'
-          })
-        });
-        const data = await response.json();
-        if (data.success) {
-          setContactStatus('success');
-          setContactStatusMsg('Message sent directly to inbox! Thank you.');
-          setContactName('');
-          setContactEmail('');
-          setContactMessage('');
-          setTimeout(() => setContactStatus('idle'), 6000);
-          return;
-        } else {
-          throw new Error(data.message || 'Failed');
-        }
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setContactResult("Form Submitted Successfully");
+        event.target.reset();
+        setTimeout(() => setContactResult(''), 6000);
       } else {
-        const subject = encodeURIComponent(`Message from ${contactName} via Portfolio`);
-        const body = encodeURIComponent(`Name: ${contactName}\nEmail: ${contactEmail}\n\nMessage:\n${contactMessage}`);
-        window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
-        setContactStatus('success');
-        setContactStatusMsg('Opening your email client to send message...');
-        setContactName('');
-        setContactEmail('');
-        setContactMessage('');
-        setTimeout(() => setContactStatus('idle'), 6000);
+        console.error("Error from Web3Forms:", data);
+        setContactResult(data.message || "Error submitting form");
       }
     } catch (err) {
-      console.warn('Home contact submission error:', err);
-      setContactStatus('error');
-      setContactStatusMsg('Could not deliver directly. Please use the WhatsApp or direct email link.');
+      console.error("Fetch Error:", err);
+      setContactResult("Error submitting form. Please try again.");
     }
   };
 
@@ -652,8 +625,7 @@ export default function Home() {
                   <input 
                     type="text" 
                     id="name" 
-                    value={contactName}
-                    onChange={(e) => setContactName(e.target.value)}
+                    name="name"
                     required
                     className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
                     placeholder="Your name" 
@@ -664,8 +636,7 @@ export default function Home() {
                   <input 
                     type="email" 
                     id="email" 
-                    value={contactEmail}
-                    onChange={(e) => setContactEmail(e.target.value)}
+                    name="email"
                     required
                     className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
                     placeholder="Your email address" 
@@ -675,30 +646,30 @@ export default function Home() {
                   <label htmlFor="message" className="sr-only">Message</label>
                   <textarea 
                     id="message" 
+                    name="message"
                     rows="4" 
-                    value={contactMessage}
-                    onChange={(e) => setContactMessage(e.target.value)}
                     required
                     className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" 
                     placeholder="How can I help you?"
                   ></textarea>
                 </div>
-                {contactStatus === 'success' && (
-                  <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 animate-in fade-in">
-                    ✓ {contactStatusMsg}
-                  </p>
-                )}
-                {contactStatus === 'error' && (
-                  <p className="text-sm font-medium text-amber-600 dark:text-amber-400 animate-in fade-in">
-                    ⚠️ {contactStatusMsg}
+                {contactResult && (
+                  <p className={`text-sm font-semibold animate-in fade-in ${
+                    contactResult === 'Form Submitted Successfully'
+                      ? 'text-emerald-600 dark:text-emerald-400'
+                      : contactResult === 'Sending....'
+                      ? 'text-blue-600 dark:text-blue-400'
+                      : 'text-amber-600 dark:text-amber-400'
+                  }`}>
+                    {contactResult === 'Form Submitted Successfully' ? '✓ Form Submitted Successfully' : contactResult}
                   </p>
                 )}
                 <button 
                   type="submit" 
-                  disabled={contactStatus === 'submitting'}
+                  disabled={contactResult === 'Sending....'}
                   className="mt-2 inline-flex items-center justify-center rounded-full bg-slate-900 dark:bg-white px-6 py-3 text-sm font-semibold text-white dark:text-slate-900 hover:scale-105 transition-transform cursor-pointer disabled:opacity-75"
                 >
-                  {contactStatus === 'submitting' ? 'Sending Message...' : 'Send Message'}
+                  {contactResult === 'Sending....' ? 'Sending....' : 'Submit Form'}
                 </button>
               </form>
             </div>
