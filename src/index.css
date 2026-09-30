@@ -184,7 +184,7 @@ h1,h2,h3{ font-family: 'Poppins', Inter, system-ui, sans-serif }
     color: #0f172a !important;
     font-size: 12pt !important;
   }
-  header, footer, nav, .social-fixed, .print\\:hidden, [role="navigation"] {
+  header, footer, nav, .social-fixed, [role="navigation"] {
     display: none !important;
   }
   main {
