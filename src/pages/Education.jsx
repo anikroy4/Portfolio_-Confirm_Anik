@@ -98,7 +98,7 @@ export default function Education() {
                     </div>
                   </div>
                   
-                  <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                  <div className="mt-6 pt-6 border-t border-slate-200/80 dark:border-slate-800 flex items-center gap-2 text-slate-700 dark:text-slate-300">
                     <span className="text-lg font-bold text-slate-900 dark:text-white">Result:</span> 
                     <span className="font-medium bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-sm">
                       {edu.result}

@@ -19,7 +19,7 @@ export default function Extracurriculum() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-8 delay-100">
           
           {/* Main Sports & Athletics Card (Spans 2 columns on desktop) */}
-          <div className="md:col-span-2 rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="md:col-span-2 rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-2xl shadow-sm">
                 ⚽
@@ -31,7 +31,7 @@ export default function Extracurriculum() {
             </p>
             <div className="flex flex-wrap gap-3">
               {['Football', 'Cricket', 'Volleyball', 'Handball', 'Badminton'].map(sport => (
-                <span key={sport} className="px-4 py-2 text-sm font-semibold rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/50 dark:border-slate-700/50">
+                <span key={sport} className="px-4 py-2 text-sm font-semibold rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800/80">
                   {sport}
                 </span>
               ))}
@@ -39,7 +39,7 @@ export default function Extracurriculum() {
           </div>
 
           {/* Photography & Hobbies */}
-          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 text-2xl shadow-sm">
                 📸
@@ -53,7 +53,7 @@ export default function Extracurriculum() {
           </div>
 
           {/* Travel Card */}
-          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-2xl shadow-sm">
                 ✈️
@@ -65,21 +65,21 @@ export default function Extracurriculum() {
                 <span className="text-xl">🇧🇩</span>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white">Bangladesh</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Explored extensively all over the country.</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">Explored extensively all over the country.</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-xl">🇮🇳</span>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white">India</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Visited several regions and cultural landmarks.</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">Visited several regions and cultural landmarks.</p>
                 </div>
               </li>
             </ul>
           </div>
 
           {/* Languages Card */}
-          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-2xl shadow-sm">
                 🗣️
@@ -90,7 +90,7 @@ export default function Extracurriculum() {
               <div>
                 <div className="flex justify-between mb-1">
                   <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Bengali</span>
-                  <span className="text-xs font-medium text-slate-500">Native / Fluent</span>
+                  <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Native / Fluent</span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
                   <div className="bg-blue-500 h-2 rounded-full w-full"></div>
@@ -99,7 +99,7 @@ export default function Extracurriculum() {
               <div>
                 <div className="flex justify-between mb-1">
                   <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">English</span>
-                  <span className="text-xs font-medium text-slate-500">Fluent</span>
+                  <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Fluent</span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
                   <div className="bg-blue-500 h-2 rounded-full w-[90%]"></div>
@@ -108,7 +108,7 @@ export default function Extracurriculum() {
               <div>
                 <div className="flex justify-between mb-1">
                   <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Hindi</span>
-                  <span className="text-xs font-medium text-slate-500">Conversational</span>
+                  <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Conversational</span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
                   <div className="bg-indigo-400 h-2 rounded-full w-[75%]"></div>
@@ -118,7 +118,7 @@ export default function Extracurriculum() {
           </div>
 
           {/* Research & Tech Interests Card */}
-          <div className="rounded-[2rem] bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 border border-slate-700 p-8 shadow-xl text-white transition-transform hover:-translate-y-1">
+          <div className="rounded-[2rem] bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 border border-slate-700/80 p-8 shadow-xl text-white transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl shadow-sm backdrop-blur-md">
                 🤖

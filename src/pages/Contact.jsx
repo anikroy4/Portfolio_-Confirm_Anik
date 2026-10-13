@@ -68,7 +68,7 @@ export default function Contact() {
           <div className="lg:col-span-5 relative group animate-in fade-in slide-in-from-bottom-8 delay-100">
             <div className="absolute -inset-1 bg-gradient-to-br from-blue-500 to-purple-500 rounded-[2.5rem] blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
             
-            <div className="relative rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 flex flex-col justify-between gap-8">
+            <div className="relative rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 flex flex-col justify-between gap-8">
               
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Contact Details</h3>
@@ -77,7 +77,7 @@ export default function Contact() {
                   {/* Email Box with 1-Click Copy */}
                   <div 
                     onClick={() => handleCopy(targetEmail, 'email')}
-                    className="flex items-center justify-between p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer group/item"
+                    className="flex items-center justify-between p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer group/item"
                     title="Click to copy email address"
                   >
                     <div className="flex items-center gap-3.5 min-w-0">
@@ -85,7 +85,7 @@ export default function Contact() {
                         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                       </div>
                       <div className="truncate">
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Email (Click to copy)</p>
+                        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email (Click to copy)</p>
                         <p className="text-sm font-medium text-slate-900 dark:text-white truncate">{targetEmail}</p>
                       </div>
                     </div>
@@ -97,7 +97,7 @@ export default function Contact() {
                   {/* Phone Box with 1-Click Copy */}
                   <div 
                     onClick={() => handleCopy(targetPhone, 'phone')}
-                    className="flex items-center justify-between p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer group/item"
+                    className="flex items-center justify-between p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer group/item"
                     title="Click to copy phone number"
                   >
                     <div className="flex items-center gap-3.5 min-w-0">
@@ -105,7 +105,7 @@ export default function Contact() {
                         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                       </div>
                       <div className="truncate">
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Phone (Click to copy)</p>
+                        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Phone (Click to copy)</p>
                         <p className="text-sm font-medium text-slate-900 dark:text-white truncate">+88 01521 428525</p>
                       </div>
                     </div>
@@ -115,12 +115,12 @@ export default function Contact() {
                   </div>
 
                   {/* Location */}
-                  <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50">
+                  <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-800/80">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
                       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Location &amp; Timezone</p>
+                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Location &amp; Timezone</p>
                       <p className="text-sm font-medium text-slate-900 dark:text-white">Dhaka - 1000, Bangladesh (GMT+6)</p>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ export default function Contact() {
                   <a 
                     href={`https://wa.me/${targetPhone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello Anik, I saw your portfolio and would like to connect!')}`} 
                     target="_blank" 
-                    rel="noreferrer"
+                    rel="noreferrer" 
                     className="flex w-full items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3.5 text-sm font-bold shadow-lg shadow-emerald-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
@@ -143,8 +143,8 @@ export default function Contact() {
               </div>
 
               {/* Social Links */}
-              <div className="pt-6 border-t border-slate-200/60 dark:border-slate-800/60">
-                <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">Connect on Socials</p>
+              <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800/80">
+                <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Connect on Socials</p>
                 <div className="flex gap-4">
                   <a href="https://github.com/anikroy4" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-all hover:-translate-y-1" aria-label="GitHub">
                     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
@@ -160,10 +160,10 @@ export default function Contact() {
 
           {/* Right Column: The Form */}
           <div className="lg:col-span-7 animate-in fade-in slide-in-from-bottom-8 delay-200">
-            <div className="rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60">
+            <div className="rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60">
               
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Send a Message</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Fill out the details below and I&apos;ll get back to you promptly.</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">Fill out the details below and I&apos;ll get back to you promptly.</p>
 
               <form onSubmit={onSubmit} className="space-y-6">
                 
@@ -176,7 +176,7 @@ export default function Contact() {
                       type="text" 
                       name="name" 
                       required
-                      className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 px-4 py-3.5 text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all placeholder:text-slate-400" 
+                      className="w-full rounded-2xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 px-4 py-3.5 text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500" 
                       placeholder="John Doe" 
                     />
                   </div>
@@ -189,7 +189,7 @@ export default function Contact() {
                       type="email" 
                       name="email" 
                       required
-                      className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 px-4 py-3.5 text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all placeholder:text-slate-400" 
+                      className="w-full rounded-2xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 px-4 py-3.5 text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500" 
                       placeholder="john@example.com" 
                     />
                   </div>
@@ -202,7 +202,7 @@ export default function Contact() {
                     id="message"
                     name="message" 
                     required
-                    className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 px-4 py-3.5 text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all placeholder:text-slate-400 resize-none" 
+                    className="w-full rounded-2xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 px-4 py-3.5 text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 resize-none" 
                     rows={5} 
                     placeholder="Tell me about your project, timeline, or open position..." 
                   />

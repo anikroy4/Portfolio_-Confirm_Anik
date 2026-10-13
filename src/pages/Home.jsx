@@ -292,7 +292,7 @@ export default function Home() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
                 Anik Roy
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
                   {display}
                   <span className="animate-pulse text-slate-900 dark:text-white">|</span>
                 </span>
@@ -316,23 +316,23 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-3 sm:gap-6 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-slate-200 dark:border-slate-800 w-full max-w-lg">
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-slate-900 dark:text-white">5+</div>
-                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Live Projects</div>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Live Projects</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-slate-900 dark:text-white">MERN</div>
-                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Stack Focus</div>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Stack Focus</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-slate-900 dark:text-white">React</div>
-                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Specialist</div>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Specialist</div>
               </div>
             </div>
           </div>
 
           {/* Hero Visual - Responsive for Mobile, Tablet, and Desktop */}
           <div className="flex justify-center items-center w-full animate-in fade-in slide-in-from-bottom-6 lg:slide-in-from-right-8 duration-1000">
-            <div className="relative w-48 sm:w-64 md:w-80 lg:w-full max-w-[340px] lg:max-w-[420px] aspect-square">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 sm:opacity-25 animate-pulse"></div>
+            <div className="relative w-48 sm:w-64 md:w-80 lg:w-full max-w-85 lg:max-w-105 aspect-square">
+              <div className="absolute inset-0 bg-linear-to-tr from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 sm:opacity-25 animate-pulse"></div>
               <div className="relative w-full h-full rounded-full border-4 border-white/60 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl shadow-2xl flex items-center justify-center overflow-hidden p-1.5 sm:p-2">
                 <img 
                   src="/profile.jpg" 
@@ -349,7 +349,7 @@ export default function Home() {
       <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl tracking-tight">
-            Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Projects</span>
+            Selected <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">Projects</span>
           </h2>
           <p className="mt-4 text-slate-600 dark:text-slate-400">
             A showcase of my recent work with technology stack and expertise details.
@@ -372,19 +372,19 @@ export default function Home() {
                 </div>
 
                 {/* Image Placeholder - Elegant visual with equal sizing */}
-                <div className="aspect-[16/10] w-full rounded-xl overflow-hidden mb-5 relative bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-800 dark:via-slate-800/70 dark:to-slate-900 border border-slate-200/60 dark:border-slate-700/50">
+                <div className="aspect-16/10 w-full rounded-xl overflow-hidden mb-5 relative bg-linear-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-800 dark:via-slate-800/70 dark:to-slate-900 border border-slate-200/60 dark:border-slate-700/50">
                   {/* Inner glow pattern */}
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.12),transparent_60%)]"></div>
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(99,102,241,0.10),transparent_55%)]"></div>
                   
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/0 via-indigo-600/0 to-blue-600/0 group-hover:from-blue-600/10 group-hover:via-indigo-600/8 group-hover:to-blue-600/10 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-linear-to-tr from-blue-600/0 via-indigo-600/0 to-blue-600/0 group-hover:from-blue-600/10 group-hover:via-indigo-600/8 group-hover:to-blue-600/10 transition-all duration-500"></div>
                   
                   {/* Expertise Badge - Refined */}
                   <div className="absolute top-3 left-3 z-10">
                     <div className="inline-flex items-center gap-1.5 rounded-full border border-white/60 dark:border-slate-700/60 bg-white/95 dark:bg-slate-900/90 backdrop-blur-md px-2.5 py-1 shadow-md shadow-slate-900/5 dark:shadow-black/30">
                       <span className="text-sm leading-none">{exp.icon}</span>
-                      <span className={`text-[10px] font-extrabold tracking-wide bg-clip-text text-transparent bg-gradient-to-r ${exp.color}`}>
+                      <span className={`text-[10px] font-extrabold tracking-wide bg-clip-text text-transparent bg-linear-to-r ${exp.color}`}>
                         {exp.label}
                       </span>
                     </div>
@@ -395,7 +395,7 @@ export default function Home() {
                     <div className="rounded-full border border-white/40 dark:border-white/10 bg-white/70 dark:bg-slate-900/60 backdrop-blur-md px-2.5 py-1 text-slate-600/90 dark:text-slate-400 text-[10px] font-black tracking-[0.15em] shadow-sm">
                       0{idx + 1}
                     </div>
-                    <div className="inline-flex items-center gap-1 rounded-full border border-amber-200/60 dark:border-amber-500/20 bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-950/30 dark:to-yellow-950/20 backdrop-blur-md px-2 py-0.5 shadow-sm">
+                    <div className="inline-flex items-center gap-1 rounded-full border border-amber-200/60 dark:border-amber-500/20 bg-linear-to-r from-amber-50 to-yellow-50 dark:from-amber-950/30 dark:to-yellow-950/20 backdrop-blur-md px-2 py-0.5 shadow-sm">
                       <span className="text-sm leading-none" style={{ filter: 'drop-shadow(0 0 2px rgba(251,191,36,0.4))' }}>⭐</span>
                       <span className="text-[10px] font-extrabold text-amber-700 dark:text-amber-300">{project.stars ?? 0}</span>
                     </div>
@@ -412,15 +412,15 @@ export default function Home() {
                   </div>
 
                   {/* Bottom subtle shine line */}
-                  <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-4 right-4 h-px bg-linear-to-r from-transparent via-blue-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 
                 {/* Content - Equal height layout with consistent spacing */}
                 <div className="relative z-10 flex-1 flex flex-col min-h-0">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug tracking-tight transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 dark:group-hover:from-blue-400 dark:group-hover:to-indigo-400 line-clamp-1">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug tracking-tight transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-indigo-600 dark:group-hover:from-blue-400 dark:group-hover:to-indigo-400 line-clamp-1">
                     {project.title}
                   </h3>
-                  <p className="mt-2.5 text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 min-h-[4.5rem]">
+                  <p className="mt-2.5 text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 min-h-18">
                     {project.description}
                   </p>
 
@@ -428,8 +428,8 @@ export default function Home() {
                   {project.highlights?.length > 0 && (
                     <div className="mt-3.5 flex flex-wrap gap-1.5">
                       {project.highlights.map((h, hIdx) => (
-                        <span key={hIdx} className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-700 border border-blue-100/70 dark:from-blue-950/40 dark:to-indigo-950/30 dark:text-indigo-300 dark:border-blue-900/30">
-                          <span className="h-1 w-1 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500"></span>
+                        <span key={hIdx} className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-blue-50 to-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-700 border border-blue-100/70 dark:from-blue-950/40 dark:to-indigo-950/30 dark:text-indigo-300 dark:border-blue-900/30">
+                          <span className="h-1 w-1 rounded-full bg-linear-to-r from-blue-500 to-indigo-500"></span>
                           {h}
                         </span>
                       ))}
@@ -439,7 +439,7 @@ export default function Home() {
                   {/* Tech & Expertise Section */}
                   <div className="mt-4 flex-1 min-h-0 overflow-hidden flex flex-col justify-start">
                     <div className="mb-2.5 pb-2 border-b border-dashed border-slate-200/70 dark:border-slate-700/60 flex items-center gap-2">
-                      <div className="h-4 w-0.5 rounded-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                      <div className="h-4 w-0.5 rounded-full bg-linear-to-b from-blue-500 to-indigo-500"></div>
                       <p className="text-[10px] font-black uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400">
                         Tech &amp; Expertise
                       </p>
@@ -447,11 +447,11 @@ export default function Home() {
                     <div className="space-y-2.5">
                       {/* Expertise row */}
                       <div>
-                        <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                        <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                           Expertise
                         </p>
                         <div className="flex flex-wrap gap-1">
-                          <span className="inline-flex items-center gap-1 rounded-md border border-blue-200/70 bg-gradient-to-r from-blue-50 to-indigo-50 px-2 py-0.5 text-[10px] font-extrabold text-blue-700 dark:border-blue-900/40 dark:from-blue-950/40 dark:to-indigo-950/30 dark:text-indigo-300 shadow-sm">
+                          <span className="inline-flex items-center gap-1 rounded-md border border-blue-200/70 bg-linear-to-r from-blue-50 to-indigo-50 px-2 py-0.5 text-[10px] font-extrabold text-blue-700 dark:border-blue-900/40 dark:from-blue-950/40 dark:to-indigo-950/30 dark:text-indigo-300 shadow-sm">
                             <span className="text-sm leading-none">{exp.icon}</span>
                             {exp.label}
                           </span>
@@ -459,7 +459,7 @@ export default function Home() {
                       </div>
                       {project.languages?.length > 0 && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Languages
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -476,7 +476,7 @@ export default function Home() {
                       )}
                       {project.frameworks?.length > 0 && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Frameworks
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -493,7 +493,7 @@ export default function Home() {
                       )}
                       {(project.databases?.length > 0 || project.libraries?.length > 0) && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Tools &amp; DB
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -518,7 +518,7 @@ export default function Home() {
                       )}
                       {project.css?.length > 0 && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Styling
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -536,7 +536,7 @@ export default function Home() {
                       {/* Fallback flat tech list if categories are missing (for GitHub imported projects) */}
                       {project.tech?.length > 0 && !project.languages?.length && !project.frameworks?.length && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Tech
                           </p>
                           <div className="flex flex-wrap gap-1">

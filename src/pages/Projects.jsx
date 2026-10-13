@@ -310,7 +310,7 @@ export default function Projects() {
           </a>
         </div>
 
-        <div className="mb-8 flex min-h-10 flex-wrap items-center justify-between gap-3 text-sm text-slate-500 dark:text-slate-400" aria-live="polite">
+        <div className="mb-8 flex min-h-10 flex-wrap items-center justify-between gap-3 text-sm text-slate-600 dark:text-slate-400" aria-live="polite">
           <div className="flex items-center gap-2">
             {isLoading && (
               <>
@@ -429,7 +429,7 @@ export default function Projects() {
                     <div className="space-y-2.5">
                       {/* Expertise row */}
                       <div>
-                        <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                        <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                           Expertise
                         </p>
                         <div className="flex flex-wrap gap-1">
@@ -441,7 +441,7 @@ export default function Projects() {
                       </div>
                       {p.languages?.length > 0 && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Languages
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -458,7 +458,7 @@ export default function Projects() {
                       )}
                       {p.frameworks?.length > 0 && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Frameworks
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -475,7 +475,7 @@ export default function Projects() {
                       )}
                       {(p.databases?.length > 0 || p.libraries?.length > 0) && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Tools &amp; DB
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -500,7 +500,7 @@ export default function Projects() {
                       )}
                       {p.css?.length > 0 && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Styling
                           </p>
                           <div className="flex flex-wrap gap-1">
@@ -518,7 +518,7 @@ export default function Projects() {
                       {/* Fallback flat tech list if categories are missing */}
                       {p.tech?.length > 0 && !p.languages?.length && !p.frameworks?.length && (
                         <div>
-                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                          <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                             Tech
                           </p>
                           <div className="flex flex-wrap gap-1">
