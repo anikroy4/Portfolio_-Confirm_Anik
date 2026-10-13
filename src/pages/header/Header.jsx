@@ -31,7 +31,7 @@ export default function Header() {
 
     return (
         // Floating container positioned at the top center
-        <div className="fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 transition-all duration-300 sm:w-[calc(100%-3rem)]">
+        <div className="fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 transition-all duration-300 sm:w-[calc(100%-3rem)] print:hidden">
             <header className="relative flex min-h-14 min-w-0 items-center justify-between whitespace-nowrap rounded-full border border-slate-200/80 bg-white/80 px-2 py-2 shadow-lg shadow-slate-200/20 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/80 dark:shadow-black/40">
                 
                 {/* Logo Area */}
