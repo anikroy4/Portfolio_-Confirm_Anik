@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SocialBar() {
   return (
-    <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center p-3 rounded-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 shadow-xl shadow-slate-200/50 dark:shadow-black/60 animate-in fade-in slide-in-from-left-8 duration-1000 delay-500">
+    <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center p-3 rounded-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 shadow-xl shadow-slate-200/50 dark:shadow-black/60 animate-in fade-in slide-in-from-left-8 duration-1000 delay-500 print:hidden">
       
       <div className="flex flex-col gap-4">
         

@@ -234,8 +234,8 @@ export default function Resume() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8 print:p-0 print:min-h-0 print:bg-white">
+      <div className="mx-auto max-w-6xl print:max-w-none print:w-full">
         
         {/* Top Header Card & Actions */}
         <div className="relative mb-10 overflow-hidden rounded-3xl bg-white/80 dark:bg-slate-900/80 p-6 sm:p-10 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print:hidden animate-in fade-in slide-in-from-bottom-6 duration-700">
@@ -318,49 +318,49 @@ export default function Resume() {
         </div>
 
         {/* Main Document Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start resume-grid">
           
           {/* Left Column: Sidebar & Sticky Bio */}
-          <aside className="lg:col-span-4 lg:sticky lg:top-24 flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-8 delay-150">
+          <aside className="lg:col-span-4 lg:sticky lg:top-24 print:static print:top-0 flex flex-col gap-6 resume-col-left animate-in fade-in slide-in-from-bottom-8 delay-150">
             
             {/* Profile & Quick Contact Card */}
-            <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50">
+            <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print-card">
               
-              <div className="flex items-center gap-4 mb-6">
-                <div className="relative h-20 w-20 rounded-2xl bg-linear-to-tr from-blue-600 to-indigo-600 p-0.5 shadow-md overflow-hidden shrink-0">
+              <div className="flex items-center gap-4 mb-6 print:mb-3 print:gap-3">
+                <div className="relative h-20 w-20 print:h-14 print:w-14 rounded-2xl print:rounded-xl bg-linear-to-tr from-blue-600 to-indigo-600 p-0.5 shadow-md overflow-hidden shrink-0">
                   <img 
                     src="/profile.jpg" 
                     alt="Anik Roy" 
-                    className="w-full h-full object-cover object-top rounded-[14px]" 
+                    className="w-full h-full object-cover object-top rounded-[14px] print:rounded-[10px]" 
                   />
-                  <span className="absolute bottom-1 right-1 h-3.5 w-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900" title="Active & Available"></span>
+                  <span className="absolute bottom-1 right-1 h-3.5 w-3.5 print:h-2 print:w-2 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900" title="Active & Available"></span>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{resumeData.name}</h2>
-                  <p className="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400">{resumeData.title}</p>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">B.Sc. in CSE &bull; UIU</p>
+                  <h2 className="text-2xl print:text-base font-bold text-slate-900 dark:text-white leading-tight">{resumeData.name}</h2>
+                  <p className="text-xs sm:text-sm print:text-xs font-semibold text-blue-600 dark:text-blue-400 mt-0.5">{resumeData.title}</p>
+                  <p className="text-[11px] print:text-[9.5px] text-slate-500 dark:text-slate-400 mt-0.5">B.Sc. in CSE &bull; UIU</p>
                 </div>
               </div>
 
               {/* 1-Click Interactive Contact Rows */}
-              <div className="space-y-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="space-y-3 print:space-y-1.5 pt-4 print:pt-2.5 border-t border-slate-100 dark:border-slate-800">
                 
                 {/* Email with copy */}
                 <div 
                   onClick={() => handleCopy(resumeData.contact.email, 'email')}
-                  className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
+                  className="flex items-center justify-between p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
                   title="Click to copy email address"
                 >
-                  <div className="flex items-center gap-3 min-w-0">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm">
+                  <div className="flex items-center gap-3 print:gap-1.5 min-w-0">
+                    <span className="flex h-8 w-8 print:h-5 print:w-5 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                       ✉
                     </span>
                     <div className="truncate">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email (Click to copy)</p>
-                      <p className="text-xs font-medium text-slate-800 dark:text-slate-200 truncate">{resumeData.contact.email}</p>
+                      <p className="text-[10px] print:hidden font-bold text-slate-400 uppercase tracking-wider">Email (Click to copy)</p>
+                      <p className="text-xs print:text-[9.5px] font-medium text-slate-800 dark:text-slate-200 print:text-slate-900 truncate">{resumeData.contact.email}</p>
                     </div>
                   </div>
-                  <span className="text-[11px] font-bold text-blue-600 dark:text-blue-400 shrink-0 ml-2">
+                  <span className="text-[11px] font-bold text-blue-600 dark:text-blue-400 shrink-0 ml-2 print:hidden">
                     {copiedItem === 'email' ? '✓ Copied' : 'Copy'}
                   </span>
                 </div>
@@ -368,32 +368,42 @@ export default function Resume() {
                 {/* Phone with copy */}
                 <div 
                   onClick={() => handleCopy(resumeData.contact.phone, 'phone')}
-                  className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
+                  className="flex items-center justify-between p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
                   title="Click to copy phone number"
                 >
-                  <div className="flex items-center gap-3 min-w-0">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm">
+                  <div className="flex items-center gap-3 print:gap-1.5 min-w-0">
+                    <span className="flex h-8 w-8 print:h-5 print:w-5 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                       ☎
                     </span>
                     <div className="truncate">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Phone (Click to copy)</p>
-                      <p className="text-xs font-medium text-slate-800 dark:text-slate-200 truncate">{resumeData.contact.phone}</p>
+                      <p className="text-[10px] print:hidden font-bold text-slate-400 uppercase tracking-wider">Phone (Click to copy)</p>
+                      <p className="text-xs print:text-[9.5px] font-medium text-slate-800 dark:text-slate-200 print:text-slate-900 truncate">{resumeData.contact.phone}</p>
                     </div>
                   </div>
-                  <span className="text-[11px] font-bold text-blue-600 dark:text-blue-400 shrink-0 ml-2">
+                  <span className="text-[11px] font-bold text-blue-600 dark:text-blue-400 shrink-0 ml-2 print:hidden">
                     {copiedItem === 'phone' ? '✓ Copied' : 'Copy'}
                   </span>
                 </div>
 
                 {/* Location */}
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm">
+                <div className="flex items-center gap-3 print:gap-1.5 p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200">
+                  <span className="flex h-8 w-8 print:h-5 print:w-5 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                     📍
                   </span>
                   <div>
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Location</p>
-                    <p className="text-xs font-medium text-slate-800 dark:text-slate-200">{resumeData.contact.address}</p>
+                    <p className="text-[10px] print:hidden font-bold text-slate-400 uppercase tracking-wider">Location</p>
+                    <p className="text-xs print:text-[9.5px] font-medium text-slate-800 dark:text-slate-200 print:text-slate-900">{resumeData.contact.address}</p>
                   </div>
+                </div>
+
+                {/* GitHub & LinkedIn (Shown on Print) */}
+                <div className="hidden print:flex items-center gap-1.5 px-1 py-0.5 text-[8.5px] text-slate-600">
+                  <span className="font-bold text-slate-800">GitHub:</span>
+                  <span className="truncate">github.com/anikroy4</span>
+                </div>
+                <div className="hidden print:flex items-center gap-1.5 px-1 py-0.5 text-[8.5px] text-slate-600">
+                  <span className="font-bold text-slate-800">LinkedIn:</span>
+                  <span className="truncate">linkedin.com/in/anik-roy-bd</span>
                 </div>
               </div>
 
@@ -437,13 +447,13 @@ export default function Resume() {
             </div>
 
             {/* Interactive Skills Matrix with Search & Filtering */}
-            <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print:break-inside-avoid">
+            <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print-card">
               
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <div className="flex items-center justify-between mb-4 print:mb-1.5">
+                <h3 className="text-lg print:text-[11px] font-bold text-slate-900 dark:text-white flex items-center gap-2 print-card-title">
                   <span className="text-blue-600 dark:text-blue-400">⚡</span> Skills Matrix
                 </h3>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                <span className="text-xs print:hidden font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
                   {filteredSkills.length} Skills
                 </span>
               </div>
@@ -499,11 +509,11 @@ export default function Resume() {
               </div>
 
               {/* Skills Cloud */}
-              <div className="flex flex-wrap gap-2">
-                {filteredSkills.map(skill => (
+              <div className="flex flex-wrap gap-2 print:gap-1.5">
+                {filteredSkills.map((skill, sIdx) => (
                   <span 
                     key={skill} 
-                    className="px-3 py-1.5 text-xs font-medium rounded-xl bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 border border-slate-200/70 dark:border-slate-700/60 hover:border-blue-400 dark:hover:border-blue-500 hover:scale-105 transition-all shadow-xs"
+                    className={`px-3 py-1.5 print:px-2 print:py-0.5 text-xs print:text-[8.5px] font-medium rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 border border-slate-200/70 dark:border-slate-700/60 print:border-slate-200 hover:border-blue-400 dark:hover:border-blue-500 hover:scale-105 transition-all shadow-xs ${sIdx >= 32 ? 'print:hidden' : ''}`}
                   >
                     {skill}
                   </span>
@@ -515,19 +525,19 @@ export default function Resume() {
             </div>
 
             {/* Certifications Card */}
-            <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print:break-inside-avoid">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+            <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print-card">
+              <h3 className="text-lg print:text-xs font-bold text-slate-900 dark:text-white mb-4 print:mb-2 flex items-center gap-2 print-card-title">
                 <span className="text-amber-500">🏆</span> Certifications
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-4 print:space-y-2">
                 {resumeData.certifications.map((cert, idx) => (
-                  <div key={idx} className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50">
+                  <div key={idx} className="p-3.5 print:p-2 rounded-2xl print:rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200">
                     <div className="flex items-start justify-between gap-2">
                       <div>
-                        <p className="text-xs font-bold text-slate-900 dark:text-white leading-snug">{cert.title}</p>
-                        <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">{cert.issuer}</p>
+                        <p className="text-xs print:text-[10px] font-bold text-slate-900 dark:text-white leading-snug">{cert.title}</p>
+                        <p className="text-[11px] print:text-[9px] text-slate-500 dark:text-slate-400 mt-0.5">{cert.issuer}</p>
                       </div>
-                      <span className="px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800/50 text-amber-700 dark:text-amber-400 text-[10px] font-bold shrink-0">
+                      <span className="px-2 py-0.5 print:px-1.5 print:py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800/50 text-amber-700 dark:text-amber-400 text-[10px] print:text-[8.5px] font-bold shrink-0">
                         {cert.year}
                       </span>
                     </div>
@@ -539,59 +549,59 @@ export default function Resume() {
           </aside>
 
           {/* Right Column: Main Content Sections */}
-          <div className="lg:col-span-8 flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-8 delay-200">
+          <div className="lg:col-span-8 flex flex-col gap-8 resume-col-right animate-in fade-in slide-in-from-bottom-8 delay-200">
             
             {/* Professional Summary */}
-            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm">
+            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print-card">
+              <h2 className="text-xl print:text-xs font-bold text-slate-900 dark:text-white mb-4 print:mb-2 flex items-center gap-2.5 print:gap-1.5 print-card-title">
+                <span className="flex h-8 w-8 print:h-5 print:w-5 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                   📋
                 </span>
                 Professional Summary
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed print:leading-relaxed text-sm sm:text-base print:text-[10px]">
                 {resumeData.summary}
               </p>
             </section>
 
             {/* Experience & Professional Training */}
-            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm">
+            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print-card">
+              <h2 className="text-xl print:text-xs font-bold text-slate-900 dark:text-white mb-6 print:mb-2 flex items-center gap-2.5 print:gap-1.5 print-card-title">
+                <span className="flex h-8 w-8 print:h-5 print:w-5 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                   💼
                 </span>
                 Experience & Professional Training
               </h2>
 
-              <div className="space-y-8">
+              <div className="space-y-8 print:space-y-3">
                 {resumeData.experience.map((exp, idx) => (
-                  <div key={idx} className="relative pl-6 sm:pl-8 border-l-2 border-blue-500/30 dark:border-blue-500/20 print:break-inside-avoid">
-                    <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-blue-600 dark:bg-blue-500 border-4 border-white dark:border-slate-900 shadow-sm"></div>
+                  <div key={idx} className="relative pl-6 sm:pl-8 print:pl-3.5 border-l-2 print:border-l-2 border-blue-500/30 dark:border-blue-500/20">
+                    <div className="absolute -left-[9px] print:-left-[5px] top-1.5 print:top-1 h-4 w-4 print:h-2.5 print:w-2.5 rounded-full bg-blue-600 dark:bg-blue-500 border-4 print:border-0 border-white dark:border-slate-900 shadow-sm"></div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-3">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 print:gap-1 mb-3 print:mb-1">
                       <div>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="text-lg font-bold text-slate-900 dark:text-white">{exp.role}</h3>
+                        <div className="flex flex-wrap items-center gap-2 print:gap-1.5">
+                          <h3 className="text-lg print:text-xs font-bold text-slate-900 dark:text-white">{exp.role}</h3>
                           {exp.badge && (
-                            <span className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/50 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold">
+                            <span className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/50 text-emerald-700 dark:text-emerald-400 text-[10px] print:text-[8.5px] font-bold">
                               {exp.badge}
                             </span>
                           )}
                         </div>
-                        <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-0.5">{exp.company} &bull; <span className="text-slate-500 dark:text-slate-400 text-xs font-normal">{exp.location}</span></p>
+                        <p className="text-sm print:text-[10px] font-semibold text-blue-600 dark:text-blue-400 mt-0.5 print:mt-0">{exp.company} &bull; <span className="text-slate-500 dark:text-slate-400 text-xs print:text-[9px] font-normal">{exp.location}</span></p>
                       </div>
 
                       <div className="flex items-center gap-2 shrink-0">
-                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
+                        <span className="text-xs print:text-[9px] font-semibold px-3 py-1 print:px-2 print:py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
                           {exp.period}
                         </span>
                       </div>
                     </div>
 
-                    <ul className="space-y-2 mt-3">
+                    <ul className="space-y-2 print:space-y-1 mt-3 print:mt-1">
                       {exp.highlights.map((item, hIdx) => (
-                        <li key={hIdx} className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2.5 leading-relaxed">
-                          <span className="text-blue-500 mt-1 shrink-0 text-xs">▹</span>
+                        <li key={hIdx} className="text-sm print:text-[9.5px] text-slate-600 dark:text-slate-300 flex items-start gap-2.5 print:gap-1.5 leading-relaxed print:leading-relaxed">
+                          <span className="text-blue-500 mt-1 print:mt-0.5 shrink-0 text-xs print:text-[8px]">▹</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -602,10 +612,10 @@ export default function Resume() {
             </section>
 
             {/* Featured Projects Highlight */}
-            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print:break-inside-avoid">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm">
+            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print-card">
+              <div className="flex items-center justify-between mb-6 print:mb-2">
+                <h2 className="text-xl print:text-xs font-bold text-slate-900 dark:text-white flex items-center gap-2.5 print:gap-1.5 print-card-title">
+                  <span className="flex h-8 w-8 print:h-5 print:w-5 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                     🚀
                   </span>
                   Key Projects & Competence
@@ -615,16 +625,16 @@ export default function Resume() {
                 </Link>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-4 print:gap-3">
                 {resumeData.featuredProjects.map((project, idx) => (
-                  <div key={idx} className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 flex flex-col justify-between gap-3 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
+                  <div key={idx} className="p-5 print:p-2.5 rounded-2xl print:rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200 flex flex-col justify-between gap-3 print:gap-1.5 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white">{project.title}</h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">{project.description}</p>
+                      <h3 className="text-base print:text-[11px] font-bold text-slate-900 dark:text-white leading-tight">{project.title}</h3>
+                      <p className="text-xs print:text-[9.5px] text-slate-600 dark:text-slate-400 mt-2 print:mt-1 leading-relaxed print:leading-relaxed">{project.description}</p>
                     </div>
-                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-200/40 dark:border-slate-700/40">
+                    <div className="flex flex-wrap gap-1.5 print:gap-1 pt-2 print:pt-1 border-t border-slate-200/40 dark:border-slate-700/40 print:border-slate-200">
                       {project.tech.map((t, tIdx) => (
-                        <span key={tIdx} className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
+                        <span key={tIdx} className="text-[10px] print:text-[8px] font-semibold px-2 py-0.5 print:px-1.5 print:py-0.5 rounded-md bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 print:border-slate-200">
                           {t}
                         </span>
                       ))}
@@ -635,31 +645,28 @@ export default function Resume() {
             </section>
 
             {/* Education */}
-            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm">
+            <section className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 shadow-xl shadow-slate-200/30 dark:shadow-black/50 print-card">
+              <h2 className="text-xl print:text-xs font-bold text-slate-900 dark:text-white mb-6 print:mb-2 flex items-center gap-2.5 print:gap-1.5 print-card-title">
+                <span className="flex h-8 w-8 print:h-5 print:w-5 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                   🎓
                 </span>
                 Education & Academics
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-6 print:space-y-2">
                 {resumeData.education.map((edu, idx) => (
-                  <div key={idx} className="print:break-inside-avoid">
-                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                  <div key={idx}>
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 print:gap-1">
                       <div>
-                        <h3 className="text-base font-bold text-slate-900 dark:text-white">{edu.degree}</h3>
-                        <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mt-0.5">{edu.institution} &bull; <span className="text-xs text-slate-400">{edu.location}</span></p>
+                        <h3 className="text-base print:text-[11px] font-bold text-slate-900 dark:text-white leading-tight">{edu.degree}</h3>
+                        <p className="text-sm print:text-[10px] font-medium text-slate-600 dark:text-slate-400 mt-0.5 print:mt-0">{edu.institution} &bull; <span className="text-xs print:text-[9px] text-slate-400">{edu.location}</span></p>
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
-                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
+                        <span className="text-xs print:text-[9px] font-semibold px-3 py-1 print:px-2 print:py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
                           {edu.period}
                         </span>
                       </div>
                     </div>
-                    {idx !== resumeData.education.length - 1 && (
-                      <hr className="mt-6 border-slate-100 dark:border-slate-800" />
-                    )}
                   </div>
                 ))}
               </div>
