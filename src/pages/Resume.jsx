@@ -348,7 +348,7 @@ export default function Resume() {
                 {/* Email with copy */}
                 <div 
                   onClick={() => handleCopy(resumeData.contact.email, 'email')}
-                  className="flex items-center justify-between p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
+                  className="flex items-center justify-between p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/80 dark:border-slate-800/80 print:border-slate-200 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
                   title="Click to copy email address"
                 >
                   <div className="flex items-center gap-3 print:gap-1.5 min-w-0">
@@ -356,7 +356,7 @@ export default function Resume() {
                       ✉
                     </span>
                     <div className="truncate">
-                      <p className="text-[10px] print:hidden font-bold text-slate-400 uppercase tracking-wider">Email (Click to copy)</p>
+                      <p className="text-[10px] print:hidden font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email (Click to copy)</p>
                       <p className="text-xs print:text-[9.5px] font-medium text-slate-800 dark:text-slate-200 print:text-slate-900 truncate">{resumeData.contact.email}</p>
                     </div>
                   </div>
@@ -368,7 +368,7 @@ export default function Resume() {
                 {/* Phone with copy */}
                 <div 
                   onClick={() => handleCopy(resumeData.contact.phone, 'phone')}
-                  className="flex items-center justify-between p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
+                  className="flex items-center justify-between p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/80 dark:border-slate-800/80 print:border-slate-200 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer group"
                   title="Click to copy phone number"
                 >
                   <div className="flex items-center gap-3 print:gap-1.5 min-w-0">
@@ -376,7 +376,7 @@ export default function Resume() {
                       ☎
                     </span>
                     <div className="truncate">
-                      <p className="text-[10px] print:hidden font-bold text-slate-400 uppercase tracking-wider">Phone (Click to copy)</p>
+                      <p className="text-[10px] print:hidden font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Phone (Click to copy)</p>
                       <p className="text-xs print:text-[9.5px] font-medium text-slate-800 dark:text-slate-200 print:text-slate-900 truncate">{resumeData.contact.phone}</p>
                     </div>
                   </div>
@@ -386,12 +386,12 @@ export default function Resume() {
                 </div>
 
                 {/* Location */}
-                <div className="flex items-center gap-3 print:gap-1.5 p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/60 dark:border-slate-700/50 print:border-slate-200">
+                <div className="flex items-center gap-3 print:gap-1.5 p-3 print:p-1 rounded-xl print:rounded-md bg-slate-50 dark:bg-slate-800/50 print:bg-slate-50 border border-slate-200/80 dark:border-slate-800/80 print:border-slate-200">
                   <span className="flex h-8 w-8 print:h-5 print:w-5 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm print:text-xs">
                     📍
                   </span>
                   <div>
-                    <p className="text-[10px] print:hidden font-bold text-slate-400 uppercase tracking-wider">Location</p>
+                    <p className="text-[10px] print:hidden font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Location</p>
                     <p className="text-xs print:text-[9.5px] font-medium text-slate-800 dark:text-slate-200 print:text-slate-900">{resumeData.contact.address}</p>
                   </div>
                 </div>
@@ -576,7 +576,7 @@ export default function Resume() {
               <div className="space-y-8 print:space-y-3">
                 {resumeData.experience.map((exp, idx) => (
                   <div key={idx} className="relative pl-6 sm:pl-8 print:pl-3.5 border-l-2 print:border-l-2 border-blue-500/30 dark:border-blue-500/20">
-                    <div className="absolute -left-[9px] print:-left-[5px] top-1.5 print:top-1 h-4 w-4 print:h-2.5 print:w-2.5 rounded-full bg-blue-600 dark:bg-blue-500 border-4 print:border-0 border-white dark:border-slate-900 shadow-sm"></div>
+                    <div className="absolute -left-2.25 print:-left-1.25 top-1.5 print:top-1 h-4 w-4 print:h-2.5 print:w-2.5 rounded-full bg-blue-600 dark:bg-blue-500 border-4 print:border-0 border-white dark:border-slate-900 shadow-sm"></div>
 
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 print:gap-1 mb-3 print:mb-1">
                       <div>
@@ -673,7 +673,7 @@ export default function Resume() {
             </section>
 
             {/* Bottom Call to Action (Hidden in print) */}
-            <div className="rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 p-8 sm:p-10 text-white shadow-xl shadow-blue-500/20 print:hidden flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div className="rounded-3xl bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 p-8 sm:p-10 text-white shadow-xl shadow-blue-500/20 print:hidden flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
               <div>
                 <h3 className="text-2xl font-extrabold">Ready to collaborate?</h3>
                 <p className="text-sm text-blue-100 mt-1 max-w-md">Let&apos;s build fast, responsive, and engaging web applications together.</p>

@@ -21,18 +21,28 @@
 
 *{box-sizing:border-box}
 
-body {
-  min-height: 100vh;
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  background-color: #f8fafc;
   color: #071026;
-  font-family: Inter, system-ui, -apple-system, 'Poppins', sans-serif;
-  overflow-x: hidden;
-  background: var(--bg-900);
+  color-scheme: light;
 }
 
-html { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale }
+html.dark {
+  background-color: #020617;
+  color: #f8fafc;
+  color-scheme: dark;
+}
 
-/* Scale */
-html { font-size: 16px }
+body {
+  min-height: 100vh;
+  color: inherit;
+  font-family: Inter, system-ui, -apple-system, 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: inherit;
+}
 
 /* Display heading */
 .display-heading{ font-family: 'Poppins', Inter, sans-serif; font-size: clamp(28px, 4.2vw, 48px); line-height:1.02; letter-spacing:-0.02em }
@@ -172,9 +182,9 @@ h1,h2,h3{ font-family: 'Poppins', Inter, system-ui, sans-serif }
 ::-webkit-scrollbar-thumb{ background: linear-gradient(180deg,var(--accent),var(--accent-2)); border-radius:9999px }
 
 /* Dark mode helper */
-.dark-mode body{
-  background: linear-gradient(135deg,#020617 0%, #071025 60%);
-  color: #e6eef8;
+.dark body {
+  background: #020617;
+  color: #f8fafc;
 }
 
 /* ── Print / Save as PDF Styles (Full-Page 1-Page A4 Resume) ── */

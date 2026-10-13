@@ -83,7 +83,7 @@ export default function Experience() {
                   <div className="pointer-events-none absolute -inset-0.5 rounded-4xl bg-linear-to-r from-blue-500 to-indigo-500 opacity-0 blur-lg transition-opacity duration-500 ease-out group-hover:opacity-15"></div>
                   
                   {/* Pixel-perfect glassmorphism: updated backdrop-blur-2xl and exact border contrast */}
-                  <div className="relative rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:border-blue-700/50 dark:hover:shadow-blue-950/40">
+                  <div className="relative rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:border-blue-700/50 dark:hover:shadow-blue-950/40">
                     
                     {/* Header Section */}
                     <div className="flex flex-col xl:flex-row xl:items-start justify-between gap-5 mb-6">
@@ -94,7 +94,7 @@ export default function Experience() {
                         <div className="flex flex-wrap items-center gap-2 mt-2">
                           <span className="text-base md:text-lg font-semibold text-slate-700 dark:text-slate-300">{e.company}</span>
                           <span className="hidden sm:inline text-slate-300 dark:text-slate-600">•</span>
-                          <span className="text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                          <span className="text-sm font-medium text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
                             <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                             {e.period}
                           </span>
@@ -128,12 +128,12 @@ export default function Experience() {
 
                     {/* Tech Stack Pills */}
                     <div className="mt-8 pt-6 border-t border-slate-200/50 dark:border-slate-800/60">
-                      <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-3">Technologies Used</p>
+                      <p className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">Technologies Used</p>
                       <div className="flex flex-wrap gap-2">
                         {e.skills.map(skill => (
                           <span 
                             key={skill} 
-                            className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100/80 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 hover:bg-white dark:hover:bg-slate-700 hover:-translate-y-0.5 hover:shadow-sm transition-all cursor-default"
+                            className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100/80 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800/80 hover:bg-white dark:hover:bg-slate-700 hover:-translate-y-0.5 hover:shadow-sm transition-all cursor-default"
                           >
                             {skill}
                           </span>

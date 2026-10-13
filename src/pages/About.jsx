@@ -48,11 +48,11 @@ export default function About() {
               <div className="space-y-4">
                 <div className="relative pl-4 border-l-2 border-blue-500">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">MERN Stack Developer</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">One Year Academy (Running)</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">One Year Academy (Running)</p>
                 </div>
                 <div className="relative pl-4 border-l-2 border-slate-300 dark:border-slate-700">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">Front-End Developer</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Creative IT Institute (2024)</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">Creative IT Institute (2024)</p>
                 </div>
               </div>
             </div>
@@ -62,15 +62,15 @@ export default function About() {
               <div className="space-y-4">
                 <div className="relative pl-4 border-l-2 border-blue-500 mb-3.5">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">MERN Stack Developer (Lead & Founder)</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">CraftBit Tech BD (15 September 2026-Present)</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Leading a team of developers to build scalable MERN stack applications. Responsible for project management, architecture design, and overseeing the development lifecycle from conception to deployment.</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">CraftBit Tech BD (15 September 2026-Present)</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-2">Leading a team of developers to build scalable MERN stack applications. Responsible for project management, architecture design, and overseeing the development lifecycle from conception to deployment.</p>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="relative pl-4 border-l-2 border-blue-500">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">Web Developer (Intern)</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Creative IT Institute (NSDA level-3 Certified)</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Worked on various web development projects, gaining hands-on experience in HTML, CSS,Bootstrap, Tailwind CSS, and JavaScript.</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">Creative IT Institute (NSDA level-3 Certified)</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-2">Worked on various web development projects, gaining hands-on experience in HTML, CSS,Bootstrap, Tailwind CSS, and JavaScript.</p>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function About() {
                   </div>
                   <div className="pb-2">
                     <h4 className="text-base font-bold text-slate-900 dark:text-white">B.Sc. in Computer Science & Engineering</h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">United International University, Dhaka • Expected 2027</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">United International University, Dhaka • Expected 2027</p>
                   </div>
                 </div>
                 
@@ -140,7 +140,7 @@ export default function About() {
                   </div>
                   <div className="pb-2">
                     <h4 className="text-base font-bold text-slate-900 dark:text-white">Higher Secondary Certificate (Science)</h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka City College • 2016 • GPA: 4.67/5.00</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Dhaka City College • 2016 • GPA: 4.67/5.00</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -150,7 +150,7 @@ export default function About() {
                   </div>
                   <div className="pb-2">
                     <h4 className="text-base font-bold text-slate-900 dark:text-white">Secondary School Certificate (Science)</h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Motijheel Govt. Boys&apos; High School • 2014 • GPA: 5.00/5.00</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Motijheel Govt. Boys&apos; High School • 2014 • GPA: 5.00/5.00</p>
                   </div>
                 </div>
               </div>
@@ -161,12 +161,12 @@ export default function About() {
               <h3 className="text-xl font-bold mb-4">Interests & Activities</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-400 mb-2">Tech Interests</h4>
-                  <p className="text-sm leading-relaxed">Artificial Intelligence, Machine Learning, and Software Development.</p>
+                  <h4 className="text-sm font-semibold text-slate-300 mb-2">Tech Interests</h4>
+                  <p className="text-sm leading-relaxed text-slate-200">Artificial Intelligence, Machine Learning, and Software Development.</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-400 mb-2">Hobbies</h4>
-                  <p className="text-sm leading-relaxed">Photography, Travelling across Bangladesh and India, and playing Football, Cricket, and Volleyball.</p>
+                  <h4 className="text-sm font-semibold text-slate-300 mb-2">Hobbies</h4>
+                  <p className="text-sm leading-relaxed text-slate-200">Photography, Travelling across Bangladesh and India, and playing Football, Cricket, and Volleyball.</p>
                 </div>
               </div>
             </div>

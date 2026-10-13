@@ -4,7 +4,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors mt-auto print:hidden">
+        <footer className="bg-slate-50 dark:bg-slate-950 border-t border-slate-200/80 dark:border-slate-800/80 transition-colors mt-auto print:hidden">
             <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                     
@@ -18,7 +18,7 @@ export default function Footer() {
                                 Anik Roy
                             </span>
                         </a>
-                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                        <p className="text-sm font-medium text-slate-600 dark:text-slate-400">
                             © {currentYear} — Crafted with care. All rights reserved.
                         </p>
                     </div>
@@ -31,7 +31,7 @@ export default function Footer() {
                             href="https://github.com/anikroy4" 
                             target="_blank" 
                             rel="noreferrer"
-                            className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all hover:-translate-y-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full"
+                            className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all hover:-translate-y-1 hover:bg-slate-200/60 dark:hover:bg-slate-800 rounded-full"
                             aria-label="GitHub"
                         >
                             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -44,7 +44,7 @@ export default function Footer() {
                             href="https://www.linkedin.com/in/anik-roy-bd/" 
                             target="_blank" 
                             rel="noreferrer"
-                            className="p-2 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all hover:-translate-y-1 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full"
+                            className="p-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all hover:-translate-y-1 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full"
                             aria-label="LinkedIn"
                         >
                             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -55,7 +55,7 @@ export default function Footer() {
                         {/* Email */}
                         <a 
                             href="mailto:anikroy.uiu.ac.bd@gmail.com" 
-                            className="p-2 text-slate-500 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-400 transition-all hover:-translate-y-1 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-full"
+                            className="p-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-400 transition-all hover:-translate-y-1 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-full"
                             aria-label="Email"
                         >
                             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
