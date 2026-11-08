@@ -2,15 +2,29 @@ import React from 'react';
 
 export default function About() {
   return (
-    <main className="min-h-screen px-4 pt-24 pb-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950 transition-colors">
-      <div className="mx-auto max-w-6xl">
+    <main className="min-h-screen px-4 pt-24 pb-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950 transition-colors relative overflow-hidden">
+      {/* Ambient Lighting Background matching Landing Page */}
+      <div 
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-linear-to-b from-blue-500/10 via-indigo-500/5 to-transparent blur-3xl opacity-70 dark:opacity-30" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute -top-24 right-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute top-1/3 -left-20 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         
-        {/* Header Section */}
-        <div className="mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 text-center md:text-left">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Me</span>
+        {/* Header Section Centered matching Landing Page style */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            About <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Me</span>
           </h1>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto md:mx-0">
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             MERN Stack Developer passionate about user experiences and modern web technologies.
           </p>
         </div>
@@ -21,7 +35,7 @@ export default function About() {
           {/* Left Column: Profile Card */}
           <div className="md:col-span-4 flex flex-col gap-6">
             <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-8 text-center shadow-lg shadow-slate-200/20 dark:shadow-black/40 transition-all hover:shadow-xl">
-              <div className="h-32 w-32 mx-auto rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-700 border-4 border-white dark:border-slate-800 shadow-sm flex items-center justify-center">
+              <div className="h-32 w-32 mx-auto rounded-full bg-linear-to-tr from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-700 border-4 border-white dark:border-slate-800 shadow-sm flex items-center justify-center">
                  <span className="text-3xl font-bold text-slate-400 dark:text-slate-500">
                   <img src="/profile.jpg" alt="Anik Roy" className="h-full w-full object-cover rounded-full" />
                  </span>
