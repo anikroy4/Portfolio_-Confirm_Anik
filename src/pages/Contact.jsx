@@ -41,7 +41,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-28 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-32 sm:pt-36 lg:pt-40 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Ambient Lighting Background matching Landing Page */}
       <div 
         className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-linear-to-b from-blue-500/10 via-indigo-500/5 to-transparent blur-3xl opacity-70 dark:opacity-30" 
@@ -59,7 +59,7 @@ export default function Contact() {
       <div className="relative z-10 mx-auto max-w-6xl">
         
         {/* Page Header Centered matching Landing Page style */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 animate-in fade-in slide-in-from-bottom-6 duration-700">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16 lg:mb-20 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-semibold mb-5">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -71,7 +71,7 @@ export default function Contact() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Get in <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Touch</span>
           </h1>
-          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-7 sm:mt-8 lg:mt-9 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Interested in working together? Feel free to reach out for collaborations, freelance work, or just to say hello.
           </p>
         </div>

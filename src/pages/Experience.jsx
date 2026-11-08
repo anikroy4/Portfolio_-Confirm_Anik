@@ -36,7 +36,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-32 sm:pt-36 lg:pt-40 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Ambient Lighting Background matching Landing Page */}
       <div 
         className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-linear-to-b from-blue-500/10 via-indigo-500/5 to-transparent blur-3xl opacity-70 dark:opacity-30" 
@@ -54,11 +54,11 @@ export default function Experience() {
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Header Section Centered matching Landing Page style */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 animate-in fade-in slide-in-from-bottom-6 duration-700">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16 lg:mb-20 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Experience <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">&amp; Training</span>
           </h1>
-          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-7 sm:mt-8 lg:mt-9 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             My technical journey and professional development.
           </p>
         </div>
