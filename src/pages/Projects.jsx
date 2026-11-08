@@ -171,11 +171,11 @@ export default function Projects() {
       <div className="relative z-10 mx-auto max-w-6xl">
         
         {/* Header Section matching Landing Page & Screenshot */}
-        <div className="text-center max-w-3xl mx-auto mb-8 animate-in fade-in slide-in-from-bottom-6 duration-700">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Projects <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Portfolio</span>
           </h1>
-          <p className="mt-3 text-base text-slate-600 dark:text-slate-400">
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             Search, filter, and discover all my work.
           </p>
         </div>
