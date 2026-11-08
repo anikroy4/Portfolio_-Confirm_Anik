@@ -9,15 +9,29 @@ const services = [
 
 export default function Service() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Ambient Lighting Background matching Landing Page */}
+      <div 
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-linear-to-b from-blue-500/10 via-indigo-500/5 to-transparent blur-3xl opacity-70 dark:opacity-30" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute -top-24 right-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute top-1/3 -left-20 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
 
-        {/* Header Section */}
-        <div className="mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 text-center md:text-left">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Services</span>
+      <div className="relative z-10 mx-auto max-w-6xl">
+
+        {/* Header Section Centered matching Landing Page style */}
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            My <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Services</span>
           </h1>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto md:mx-0">
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             How I can help you ship great products.
           </p>
         </div>

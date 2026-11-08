@@ -41,11 +41,25 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-28 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Ambient Lighting Background matching Landing Page */}
+      <div 
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-linear-to-b from-blue-500/10 via-indigo-500/5 to-transparent blur-3xl opacity-70 dark:opacity-30" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute -top-24 right-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute top-1/3 -left-20 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         
-        {/* Page Header */}
-        <div className="text-center md:text-left mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
+        {/* Page Header Centered matching Landing Page style */}
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-semibold mb-4">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -54,10 +68,10 @@ export default function Contact() {
             Available for new opportunities &amp; projects
           </div>
           
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Touch</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Get in <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Touch</span>
           </h1>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Interested in working together? Feel free to reach out for collaborations, freelance work, or just to say hello.
           </p>
         </div>
@@ -66,7 +80,7 @@ export default function Contact() {
           
           {/* Left Column: Contact Information Card */}
           <div className="lg:col-span-5 relative group animate-in fade-in slide-in-from-bottom-8 delay-100">
-            <div className="absolute -inset-1 bg-gradient-to-br from-blue-500 to-purple-500 rounded-[2.5rem] blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
+            <div className="absolute -inset-1 bg-linear-to-br from-blue-500 to-purple-500 rounded-[2.5rem] blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
             
             <div className="relative rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-black/60 flex flex-col justify-between gap-8">
               
@@ -213,7 +227,7 @@ export default function Contact() {
                   <button 
                     type="submit" 
                     disabled={result === 'Sending....'}
-                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg shadow-blue-500/30 hover:from-blue-500 hover:to-indigo-500 transition-all hover:-translate-y-0.5 hover:shadow-xl cursor-pointer disabled:opacity-70"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-white bg-linear-to-r from-blue-600 to-indigo-600 shadow-lg shadow-blue-500/30 hover:from-blue-500 hover:to-indigo-500 transition-all hover:-translate-y-0.5 hover:shadow-xl cursor-pointer disabled:opacity-70"
                   >
                     {result === 'Sending....' ? 'Sending....' : 'Submit Form'}
                   </button>

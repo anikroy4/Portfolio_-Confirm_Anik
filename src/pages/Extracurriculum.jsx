@@ -2,15 +2,29 @@ import React from 'react';
 
 export default function Extracurriculum() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Ambient Lighting Background matching Landing Page */}
+      <div 
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-linear-to-b from-blue-500/10 via-indigo-500/5 to-transparent blur-3xl opacity-70 dark:opacity-30" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute -top-24 right-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute top-1/3 -left-20 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-3xl" 
+        aria-hidden="true" 
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         
-        {/* Header Section */}
-        <div className="text-center md:text-left mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            Beyond the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Code</span>
+        {/* Header Section Centered matching Landing Page style */}
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Beyond the <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Code</span>
           </h1>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             A glimpse into my life outside of the IDE. From athletics and photography to travelling and exploring artificial intelligence.
           </p>
         </div>
@@ -19,7 +33,7 @@ export default function Extracurriculum() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-8 delay-100">
           
           {/* Main Sports & Athletics Card (Spans 2 columns on desktop) */}
-          <div className="md:col-span-2 rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="md:col-span-2 rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-2xl shadow-sm">
                 ⚽
@@ -39,7 +53,7 @@ export default function Extracurriculum() {
           </div>
 
           {/* Photography & Hobbies */}
-          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 text-2xl shadow-sm">
                 📸
@@ -53,7 +67,7 @@ export default function Extracurriculum() {
           </div>
 
           {/* Travel Card */}
-          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-2xl shadow-sm">
                 ✈️
@@ -79,7 +93,7 @@ export default function Extracurriculum() {
           </div>
 
           {/* Languages Card */}
-          <div className="rounded-[2rem] bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
+          <div className="rounded-4xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 p-8 shadow-xl shadow-slate-200/50 dark:shadow-black/60 transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-2xl shadow-sm">
                 🗣️
@@ -118,7 +132,7 @@ export default function Extracurriculum() {
           </div>
 
           {/* Research & Tech Interests Card */}
-          <div className="rounded-[2rem] bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 border border-slate-700/80 p-8 shadow-xl text-white transition-transform hover:-translate-y-1">
+          <div className="rounded-4xl bg-linear-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 border border-slate-700/80 p-8 shadow-xl text-white transition-transform hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl shadow-sm backdrop-blur-md">
                 🤖
