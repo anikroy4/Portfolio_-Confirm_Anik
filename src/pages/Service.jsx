@@ -27,11 +27,11 @@ export default function Service() {
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Header Section Centered matching Landing Page style */}
-        <div className="text-center max-w-3xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-6 duration-700">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             My <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Services</span>
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             How I can help you ship great products.
           </p>
         </div>
